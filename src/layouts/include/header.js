@@ -14,7 +14,7 @@ function Header() {
       </div>
         <ul className="nav navbar-top-links navbar-right">
             <li style={{padding: "20px"}}>
-                <span className="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                <span className="m-r-sm text-muted welcome-message">Welcome to HRM </span>
             </li>
             <li className="dropdown">
                 <a className="dropdown-toggle count-info" data-toggle="dropdown" href="#">

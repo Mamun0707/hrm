@@ -4,10 +4,10 @@ function Footer() {
   return (
     <div className="footer">
       <div className="float-right">
-          10GB of <strong>250GB</strong> Free.
+      <strong>WDPF-R 59</strong> 
       </div>
       <div>
-          <strong>Copyright</strong> Example Company &copy; 2014-2018
+          <strong>Mamun@ </strong> Human Resource Management.. 
       </div>
     </div>
   )

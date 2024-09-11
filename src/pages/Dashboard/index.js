@@ -116,22 +116,8 @@ function Dashboard() {
                                           <i className="fa fa-times"></i>
                                       </a>
                                   </div>
-                              </div>
-                              <div className="ibox-content">
-                                  <div>
-
-                                      <div className="float-right text-right">
-
-                                          <span className="bar_dashboard">5,3,9,6,5,9,7,3,5,2,4,7,3,2,7,9,6,4,5,7,3,2,1,0,9,5,6,8,3,2,1</span>
-                                          <br/>
-                                          <small className="font-bold">$ 20 054.43</small>
-                                      </div>
-                                      <h4>NYS report new data!
-                                          <br/>
-                                          <small className="m-r"><a href="graph_flot.html"> Check the stock price! </a> </small>
-                                      </h4>
-                                      </div>
-                                  </div>
+                                </div>
+                                     
                               </div>
                           <div className="ibox ">
                               <div className="ibox-title">
@@ -202,7 +188,7 @@ function Dashboard() {
 
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/profile.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/profile.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">5m ago</small>
@@ -214,7 +200,7 @@ function Dashboard() {
 
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/a2.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/a2.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">2h ago</small>
@@ -224,7 +210,7 @@ function Dashboard() {
                                               </div>
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/a3.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/a3.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">2h ago</small>
@@ -234,7 +220,7 @@ function Dashboard() {
                                               </div>
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/a4.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/a4.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right text-navy">5h ago</small>
@@ -248,7 +234,7 @@ function Dashboard() {
                                               </div>
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/a5.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/a5.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">2h ago</small>
@@ -265,7 +251,7 @@ function Dashboard() {
                                               </div>
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/profile.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/profile.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">23h ago</small>
@@ -275,7 +261,7 @@ function Dashboard() {
                                               </div>
                                               <div className="feed-element">
                                                   <a className="float-left" href="profile.html">
-                                                      <img alt="image" className="rounded-circle" src="img/a7.jpg"/>
+                                                      <img alt="image" className="rounded-circle" src="/assets/img/a7.jpg"/>
                                                   </a>
                                                   <div className="media-body ">
                                                       <small className="float-right">46h ago</small>
@@ -334,9 +320,7 @@ function Dashboard() {
 
                                               <p>Conference on the sales results for the previous year. Monica please examine sales trends in marketing and products. Below please find the current status of the
                                                   sale.</p>
-
-                                              <p><span data-diameter="40" className="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2</span></p>
-                                          </div>
+                                            </div>
                                       </div>
                                   </div>
                                   <div className="timeline-item">
