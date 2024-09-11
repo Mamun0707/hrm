@@ -113,16 +113,7 @@ function Header() {
             </li>
 
 
-            <li>
-                <a href="login.html">
-                    <i className="fa fa-sign-out"></i> Log out
-                </a>
-            </li>
-            <li>
-                <a className="right-sidebar-toggle">
-                    <i className="fa fa-tasks"></i>
-                </a>
-            </li>
+          
         </ul>
 
     </nav>
