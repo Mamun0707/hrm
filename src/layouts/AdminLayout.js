@@ -2,6 +2,10 @@ import React from 'react';
 import Header from './include/header';
 import Sidebar from './include/sidebar';
 import Footer from './include/footer';
+import './assets/css/bootstrap.min.css';
+import './assets/css/style.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './assets/css/animate.css';
 
 function AdminLayout({children}) {
   return (
