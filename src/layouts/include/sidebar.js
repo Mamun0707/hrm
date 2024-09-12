@@ -38,7 +38,7 @@ function Sidebar() {
                         </ul>
                     </div>
                     <div className="logo-element">
-                        IN+
+                        HRM
                     </div>
                 </li>
                 <li className="active">
@@ -46,9 +46,7 @@ function Sidebar() {
                     <ul className="nav nav-second-level">
                         <li className="active"><a href="index.html">Dashboard v.1</a></li>
                         <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
-                        <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
+                       
                     </ul>
                 </li>
                 <li>

@@ -1,6 +1,23 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 function Header() {
+    const activeMenu = (e) => {
+        document.querySelectorAll('.submenu').forEach(
+            function (e) {
+                e.classList.remove('active');
+            }
+        )
+        const childElement = e.target.parentElement.querySelector('.submenu');
+        if (childElement && childElement.classList.contains('submenu')) {
+            childElement.classList.add('active');
+        }
+    }
+
+    const location = useLocation();
+    const isLinkActive = (path) => {
+        return location.pathname == path ? 'active' : "";
+    }
   return (
     <div className="row border-bottom">
     <nav className="navbar navbar-static-top" role="navigation" style={{marginBottom: "0"}}>
@@ -111,6 +128,14 @@ function Header() {
                     </li>
                 </ul>
             </li>
+
+            <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/login")}`}>
+                                        <Link to="/login" className="sidebar-link">
+                                            <i data-feather="home" width="20"></i>
+                                            <span>Log out</span>
+                                        </Link>
+            </li>
+              
 
 
           
