@@ -26,7 +26,7 @@ function Register() {
   return (
     <AuthLayout>
        <div className="middle-box text-center loginscreen   animated fadeInDown">
-            <img alt="image" className="rounded-circle" src="/assets/img/profile-hrm.jpg"/>
+            <img alt="image" className="rounded-circle" src="/assets/img/human-resources .jpg"/>
             <div>
                 <div>
                     <h3>Register Here...</h3>
@@ -45,11 +45,11 @@ function Register() {
 
                   
                     <div className="form-group">
-                        <input type="text" id="contact_no_en" className="form-control" placeholder="contact" required="" name="contact_no_en" onChange={handleChange}/>
+                        <input type="text" id="contact_no_en" className="form-control" placeholder="Contact" required="" name="contact_no_en" onChange={handleChange}/>
                     </div>
 
                     <div className="form-group">
-                    <input type="text" id="password" className="form-control" placeholder="password" name="password" onChange={handleChange}/>
+                    <input type="text" id="password" className="form-control" placeholder="Password" name="password" onChange={handleChange}/>
                     </div>
 
                     <div className="form-group">

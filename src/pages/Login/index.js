@@ -24,7 +24,7 @@ function Login() {
   return (
     <AuthLayout>
         <div className="middle-box text-center loginscreen animated fadeInDown">
-        <img alt="image" className="rounded-circle" src="/assets/img/profile-hrm.jpg"/>
+        <img alt="image" className="rounded-circle" src="/assets/img/human-resources .jpg"/>
 
         <div>
             <div>
