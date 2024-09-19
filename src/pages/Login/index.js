@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState, useEffect} from 'react';
 import AuthLayout from '../../layouts/AuthLayout';
-import { Link,useNavigate,Navigate } from 'react-router-dom';
+import { Link, useNavigate, Navigate } from 'react-router-dom';
 import { login } from '../../Api/AllApi';
 function Login() {
     const navigate = useNavigate();
