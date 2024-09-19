@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Employee from './pages/Employee';
 import Protected from './components/protected';
 // import Fahim from './pages/Fahim';
 // import Ramjan from './pages/Ramjan';
@@ -18,6 +19,11 @@ function App() {
           <Route path={"/"} element={
           <Protected isSignedIn={isSignedIn} >
             <Dashboard />
+          </Protected>
+        } />
+          <Route path={"/Employee"} element={
+          <Protected isSignedIn={isSignedIn} >
+            <Employee />
           </Protected>
         } />
           {/* <Route path="/fahim" element={<Fahim />} />
