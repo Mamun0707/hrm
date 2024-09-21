@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Employee from './pages/Employee';
+import AddEmployee from './pages/AddEmployee';
 import Protected from './components/protected';
 // import Fahim from './pages/Fahim';
 // import Ramjan from './pages/Ramjan';
@@ -21,9 +21,9 @@ function App() {
             <Dashboard />
           </Protected>
         } />
-          <Route path={"/Employee"} element={
+          <Route path={"/AddEmployee"} element={
           <Protected isSignedIn={isSignedIn} >
-            <Employee />
+            <AddEmployee />
           </Protected>
         } />
           {/* <Route path="/fahim" element={<Fahim />} />

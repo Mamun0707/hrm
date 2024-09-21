@@ -1,7 +1,7 @@
 import React from 'react'
 import AdminLayout from '../../layouts/AdminLayout'
 
-function Employee() {
+function AddEmployee() {
   return (
     <AdminLayout>
         <>
@@ -83,4 +83,4 @@ function Employee() {
   )
 }
 
-export default Employee
+export default AddEmployee
