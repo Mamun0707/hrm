@@ -19,7 +19,7 @@ const login = async (data) => {
     }
 }
 const register = async (data)=> {
-    const SIGNUP_ENDPOINT = `http://localhost/hrm/register.php`;
+    const SIGNUP_ENDPOINT = `http://localhost/hms_api/register.php`;
     try{
         let response= await axios({
             method: 'post',

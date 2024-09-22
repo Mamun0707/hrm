@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import AddEmployee from './pages/AddEmployee';
+import AddEmployee from './pages/Employee/AddEmployee';
+import ViewEmployee from './pages/Employee/ViewEmployees';
+import Terminations from './pages/Employee/Terminations';
+import Employee from './pages/Employee';
 import Protected from './components/protected';
 // import Fahim from './pages/Fahim';
 // import Ramjan from './pages/Ramjan';
@@ -24,6 +27,21 @@ function App() {
           <Route path={"/AddEmployee"} element={
           <Protected isSignedIn={isSignedIn} >
             <AddEmployee />
+          </Protected>
+        } />
+          <Route path={"/Employee"} element={
+          <Protected isSignedIn={isSignedIn} >
+            <Employee />
+          </Protected>
+        } />
+          <Route path={"/ViewEmployee"} element={
+          <Protected isSignedIn={isSignedIn} >
+            <ViewEmployee />
+          </Protected>
+        } />
+          <Route path={"/Terminations"} element={
+          <Protected isSignedIn={isSignedIn} >
+            <Terminations />
           </Protected>
         } />
           {/* <Route path="/fahim" element={<Fahim />} />
