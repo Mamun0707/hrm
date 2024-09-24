@@ -6,6 +6,8 @@ import AddEmployee from './pages/Employee/AddEmployee';
 import ViewEmployee from './pages/Employee/ViewEmployees';
 import Terminations from './pages/Employee/Terminations';
 import Employee from './pages/Employee';
+import Designation from './pages/Designation';
+import DesignationAdd from './pages/Designation/DesignationAdd';
 import Protected from './components/protected';
 // import Fahim from './pages/Fahim';
 // import Ramjan from './pages/Ramjan';
@@ -44,6 +46,21 @@ function App() {
             <Terminations />
           </Protected>
         } />
+         <Route path={"/designation"} element={
+            <Protected isSignedIn={isSignedIn} >
+              <Designation />
+            </Protected>
+          } />
+         <Route path={"/designation/add"} element={
+            <Protected isSignedIn={isSignedIn} >
+              <DesignationAdd />
+            </Protected>
+          } />
+          <Route path={"/designation/edit/:id"} element={
+            <Protected isSignedIn={isSignedIn} >
+              <DesignationAdd />
+            </Protected>
+          } />
           {/* <Route path="/fahim" element={<Fahim />} />
           <Route path="/ramjan" element={<Ramjan />} /> */}
         </Routes>
