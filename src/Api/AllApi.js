@@ -29,14 +29,8 @@ const register = async (data)=> {
             method: 'post',
             responsiveTYpe: 'json',
             url: SIGNUP_ENDPOINT,
-            data: data,
-            withCredentials:true,
-            headers:{
-                Accept:"application/json",
-                "X-Request-With":"XMLHttpRequest",
-                'Access-Control-Allow-origin':'*',
-                "Content-Type":'multipart/form-data'
-            }
+            data: data
+           
         });
         console.log(response);
     } 

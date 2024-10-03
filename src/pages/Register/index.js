@@ -36,7 +36,7 @@ function Register() {
                 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <input type="text" className="form-control" placeholder="Name" required="" name="name_en" onChange={handleChange}/>
+                        <input type="text" className="form-control" placeholder="Name" required="" name="name" onChange={handleChange}/>
                     </div>
 
                     <div className="form-group">
@@ -50,6 +50,9 @@ function Register() {
 
                     <div className="form-group">
                     <input type="text" id="password" className="form-control" placeholder="Password" name="password" onChange={handleChange}/>
+                    </div>
+                    <div className="form-group">
+                    <input type="text" id="c_password" className="form-control" placeholder="Password" name="c_password" onChange={handleChange}/>
                     </div>
 
                     <div className="form-group">
