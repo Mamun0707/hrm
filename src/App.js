@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import AddEmployee from './pages/Employee/AddEmployee';
-import ViewEmployee from './pages/Employee/ViewEmployees';
-import Terminations from './pages/Employee/Terminations';
+import AddEmployee from './pages/Employee/EmployeeAdd';
 import Employee from './pages/Employee';
 import Designation from './pages/Designation';
 import DesignationAdd from './pages/Designation/DesignationAdd';
@@ -12,6 +10,7 @@ import Protected from './components/protected';
 // import Fahim from './pages/Fahim';
 // import Ramjan from './pages/Ramjan';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EmployeeAdd from './pages/Employee/EmployeeAdd';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -26,9 +25,9 @@ function App() {
             <Dashboard />
           </Protected>
         } />
-          <Route path={"/AddEmployee"} element={
+          <Route path={"/employee/add"} element={
           <Protected isSignedIn={isSignedIn} >
-            <AddEmployee />
+            <EmployeeAdd />
           </Protected>
         } />
           <Route path={"/Employee"} element={
@@ -36,14 +35,9 @@ function App() {
             <Employee />
           </Protected>
         } />
-          <Route path={"/ViewEmployee"} element={
+         <Route path={"/employee/edit/:id"} element={
           <Protected isSignedIn={isSignedIn} >
-            <ViewEmployee />
-          </Protected>
-        } />
-          <Route path={"/Terminations"} element={
-          <Protected isSignedIn={isSignedIn} >
-            <Terminations />
+            <EmployeeAdd />
           </Protected>
         } />
          <Route path={"/designation"} element={

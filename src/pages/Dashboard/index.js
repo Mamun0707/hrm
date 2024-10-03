@@ -8,8 +8,8 @@ function Dashboard() {
         <div className="row  border-bottom white-bg dashboard-header">
 
                 <div className="col-md-3">
-                    <h2>Welcome Amelia</h2>
-                    <small>You have 42 messages and 6 notifications.</small>
+                    <h2>Welcome HRM</h2>
+                    <small>...</small>
                     <ul className="list-group clear-list m-t">
                         <li className="list-group-item fist-item">
                             <span className="float-right">
