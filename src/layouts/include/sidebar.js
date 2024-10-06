@@ -58,12 +58,6 @@ function Sidebar() {
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
                             <Link to="/Employee" className="sidebar-link">
                                 <i data-feather="home" width="20"></i>
-                                <span>Employee Edit </span>
-                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                            <Link to="/Employee" className="sidebar-link">
-                                <i data-feather="home" width="20"></i>
                                 <span>All Employee</span>
                             </Link>
                         </li>
@@ -76,24 +70,24 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-certificate" aria-hidden="true"></i> <span className="nav-label">Project</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
+                                            <Link to="/Project" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Project</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
+                                            <Link to="/Project" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Project</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
+                                            <Link to="/Project" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Project</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
@@ -101,20 +95,20 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-book" aria-hidden="true"></i> <span className="nav-label">Attendance</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
+                                            <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Attendance Records</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
+                                            <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Requests</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
+                                            <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Time Tracking</span>
                                             </Link>
@@ -126,24 +120,24 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-check-square-o" aria-hidden="true"></i> <span className="nav-label">Clients</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Clients")}`}>
+                                            <Link to="/Clients" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Clients</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Clients")}`}>
+                                            <Link to="/Clients" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Clients</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
                                             <Link to="/Employee" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Clients</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
@@ -151,26 +145,26 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-columns" aria-hidden="true"></i> <span className="nav-label">Leave Management</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                                            <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Leave Request</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                                            <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Balance</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                                            <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Leave Request</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                                            <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Types</span>
                                             </Link>
@@ -182,20 +176,20 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-headphones" aria-hidden="true"></i> <span className="nav-label">Holidays</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
+                                            <Link to="/Holidays" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Holidays</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
+                                            <Link to="/Holidays" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Holiday</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
+                                            <Link to="/Holidays" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Holiday</span>
                                             </Link>
@@ -208,20 +202,20 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-suitcase" aria-hidden="true"></i> <span className="nav-label">Accounts</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Accounts")}`}>
+                                            <Link to="/Accounts" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Income</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Accounts")}`}>
+                                            <Link to="/Accounts" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Expenses</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Accounts")}`}>
+                                            <Link to="/Accounts" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Invoices</span>
                                             </Link>
@@ -233,20 +227,20 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-university" aria-hidden="true"></i> <span className="nav-label">Departments</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
+                                            <Link to="/Departments" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Departments</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
+                                            <Link to="/Departments" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Department</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
+                                            <Link to="/Departments" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Departments</span>
                                             </Link>
@@ -258,14 +252,14 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-money" aria-hidden="true"></i> <span className="nav-label">Payroll</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Payroll")}`}>
+                                            <Link to="/Payroll" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Employee Salary</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Payroll")}`}>
+                                            <Link to="/Payroll" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Pay slip</span>
                                             </Link>
@@ -277,20 +271,20 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-clock-o" aria-hidden="true"></i> <span className="nav-label">Job</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
+                                            <Link to="/Job" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Job</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
+                                            <Link to="/Job" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Requirements</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
+                                            <Link to="/Job" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Applicant list</span>
                                             </Link>
@@ -303,32 +297,32 @@ function Sidebar() {
                 <li>
                     <a href=""> <i class="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Consultancy</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Consultancy")}`}>
+                                            <Link to="/Consultancy" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>All Consultancy</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Consultancy")}`}>
+                                            <Link to="/Consultancy" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Consultancy</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
                                             <Link to="/Employee" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Consultancy</span>
                                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </li>
 
                 <li>
                     <a href=""><i class="fa fa-file-text-o" aria-hidden="true"></i> <span className="nav-label">Forms</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Forms")}`}>
+                                            <Link to="/Forms" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Basic Form</span>
                                             </Link>
