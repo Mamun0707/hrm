@@ -1615,7 +1615,7 @@ button:focus {
 }
 .btn-info {
   color: #fff;
-  background-color: #23c6c8;
+  background-color: #323c3c;
   border-color: #23c6c8;
 }
 .btn-info:hover,
@@ -1716,7 +1716,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-danger {
   color: #fff;
-  background-color: #ed5565;
+  background-color: #b94b56;
   border-color: #ed5565;
 }
 .btn-danger:hover,

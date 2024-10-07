@@ -25,12 +25,12 @@ function Project() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Employee</h3>
+                        <h3>All Projects</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li className="breadcrumb-item"><a href="index.html">Projects</a></li>
                                 <li className="breadcrumb-item active" aria-current="page">List</li>
                             </ol>
                         </nav>
@@ -42,21 +42,21 @@ function Project() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Designation</h4>
-                            <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Projects</h4>
+                            <Link to={'/employee/add'} className='btn btn-success float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
-                                <table className="table table-bordered mb-0">
+                                <table className="table  mb-5">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Project Name</th>
                                             <th>Email</th>
-                                            <th>phone_no</th>
-                                            <th>designation_id</th>
-                                            <th>department_id</th>
-                                            <th>education</th>
-                                            <th>salary</th>
+                                            <th>Client Name</th>
+                                            <th>Deadline</th>
+                                            <th>Team Member</th>
+                                            <th>Status</th>
+                                            <th>Progress</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

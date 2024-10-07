@@ -4,7 +4,7 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function AttendanceRecords() {
+function TodayAttendance() {
     const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',designation_id:'',department_id:'',education:'',salary:''});
     const navigate=useNavigate();
     const {id} = useParams();
@@ -142,4 +142,4 @@ function AttendanceRecords() {
   )
 }
 
-export default AttendanceRecords
+export default TodayAttendance

@@ -53,89 +53,68 @@ function BasicForm() {
     }
   return (
     <AdminLayout>
-        <div className="main-content container-fluid">
+       <div className="main-content container-fluid">
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Add New Employee</h3>
+                        <h3>Employee</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li className="breadcrumb-item active" aria-current="page">Add New</li>
+                                <li className="breadcrumb-item active" aria-current="page">List</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
             </div>
 
-            <section id="basic-vertical-layouts">
-                <div className="row match-height">
-                    <div className="col-12">
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="card-body">
-                                    <form className="form form-vertical" onSubmit={handleSubmit}>
-                                        <div className="form-body">
-                                            <div className="row">
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="first-name-vertical">Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Email</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.designation_id} name="email" onChange={handleChange} placeholder="email"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Phone Number</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phone_no} name="phone_no" onChange={handleChange} placeholder="Phone"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Designation</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="designation_id" onChange={handleChange} placeholder="Designation"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Department</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange} placeholder="Department"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Education</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.education} name="education" onChange={handleChange} placeholder="Education"/>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Salary</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.salary} name="salary" onChange={handleChange} placeholder="000.00"/>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div className="col-12 d-flex justify-content-end">
-                                                    <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
-                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+            <div className="row" id="table-bordered">
+                <div className="col-12">
+                    <div className="card">
+                        <div className="card-header">
+                            <h4 className="card-title">All Designation</h4>
+                            <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
+                        </div>
+                        <div className="card-content">
+                            <div className="table-responsive">
+                                <table className="table table-bordered mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>phone_no</th>
+                                            <th>designation_id</th>
+                                            <th>department_id</th>
+                                            <th>education</th>
+                                            <th>salary</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {data && data.map((d, key) =>
+                                        <tr key={d.id}>
+                                            <td className="text-bold-500">{d.name}</td>
+                                            <td>{d.email}</td>
+                                            <td>{d.phone_no}</td>
+                                            <td>{d.designation_id}</td>
+                                            <td>{d.department_id}</td>
+                                            <td>{d.education}</td>
+                                            <td>{d.salary}</td>
+                                            <td>
+                                                <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                                            </td>
+                                        </tr>
+                                    )}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
     </AdminLayout>    

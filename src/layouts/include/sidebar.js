@@ -98,21 +98,21 @@ function Sidebar() {
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
                                             <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
-                                                <span>Attendance Records</span>
+                                                <span>Today's Attendance</span>
                                             </Link>
                         </li>
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
                                             <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
-                                                <span>Leave Requests</span>
+                                                <span>Employee Attendance</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
                                             <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Time Tracking</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
