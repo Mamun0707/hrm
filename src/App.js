@@ -5,16 +5,14 @@
       import Employee from './pages/Employee';
       import EmployeeAdd from './pages/Employee/EmployeeAdd';
       import Project from './pages/Project';
+      import AddProject from './pages/Project/AddProject';
       import Attendance from './pages/Attendance';
-      import Clients from './pages/Clients';
       import LeaveManagement from './pages/LeaveManagement';
       import Holidays from './pages/Holidays';
       import Accounts from './pages/Accounts';
       import Departments from './pages/Departments';
       import Payroll from './pages/Payroll';
-      import Job from './pages/Job';
       import Consultancy from './pages/Consultancy';
-      import Forms from './pages/Forms';
       import Designation from './pages/Designation';
       import DesignationAdd from './pages/Designation/DesignationAdd';
       import Protected from './components/protected';
@@ -51,19 +49,24 @@
                   <EmployeeAdd />
                 </Protected>
               } />
+                <Route path={"/Project/add"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AddProject />
+                </Protected>
+              } />
                 <Route path={"/Project"} element={
                 <Protected isSignedIn={isSignedIn} >
                   <Project />
                 </Protected>
               } />
+                <Route path={"/Project/edit/:id"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AddProject />
+                </Protected>
+              } />
                 <Route path={"/Attendance"} element={
                 <Protected isSignedIn={isSignedIn} >
                   <Attendance />
-                </Protected>
-              } />
-                <Route path={"/Clients"} element={
-                <Protected isSignedIn={isSignedIn} >
-                  <Clients />
                 </Protected>
               } />
                 <Route path={"/LeaveManagement"} element={
@@ -91,19 +94,9 @@
                     <Payroll />
                   </Protected>
                 } />
-              <Route path={"/Job"} element={
-                  <Protected isSignedIn={isSignedIn} >
-                    <Job />
-                  </Protected>
-                } />
               <Route path={"/Consultancy"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Consultancy />
-                  </Protected>
-                } />
-              <Route path={"/Forms"} element={
-                  <Protected isSignedIn={isSignedIn} >
-                    <Forms />
                   </Protected>
                 } />
                 <Route path={"/designation"} element={

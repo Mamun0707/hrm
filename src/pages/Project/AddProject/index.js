@@ -4,13 +4,13 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function EmployeeAdd() {
-    const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',designation_id:'',department_id:'',education:'',salary:''});
+function AddProject() {
+    const [inputs, setInputs] = useState({id:'',project_name:'',email:'',client_name:'',deadline:'',team_member:'',status:'',});
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/project/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function EmployeeAdd() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/employee/edit/${inputs.id}`;
+                apiurl=`/project/edit/${inputs.id}`;
             }else{
-                apiurl=`/employee/create`;
+                apiurl=`/project/create`;
             }
             
             let response= await axios({
@@ -45,7 +45,7 @@ function EmployeeAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/employee')
+            navigate('/project')
         } 
         catch(e){
             console.log(e);
@@ -57,7 +57,7 @@ function EmployeeAdd() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Add New Employee</h3>
+                        <h3>Add Project</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
@@ -81,47 +81,47 @@ function EmployeeAdd() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/>
+                                                    <label for="first-name-vertical">Project Name</label>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Project Name"/>
                                                     </div>
                                                 </div>
-                                                <div className="col-12">
+                                                {/* <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Email</label>
                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.designation_id} name="email" onChange={handleChange} placeholder="email"/>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Phone Number</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phone_no} name="phone_no" onChange={handleChange} placeholder="Phone"/>
+                                                    <label for="email-id-vertical">Client Name</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phone_no} name="client_name" onChange={handleChange} placeholder="client"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Designation</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="designation_id" onChange={handleChange} placeholder="Designation"/>
+                                                    <label for="email-id-vertical">Deadline</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="deadline" onChange={handleChange} placeholder="Time"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Department</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange} placeholder="Department"/>
+                                                    <label for="email-id-vertical">Team Member</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="team_member" onChange={handleChange} placeholder="See Member"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Education</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.education} name="education" onChange={handleChange} placeholder="Education"/>
+                                                    <label for="email-id-vertical">Status</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.education} name="status" onChange={handleChange} placeholder="Status"/>
                                                     </div>
                                                 </div>
                                                 
-                                                <div className="col-12">
+                                                {/* <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Salary</label>
                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.salary} name="salary" onChange={handleChange} placeholder="000.00"/>
                                                     </div>
-                                                </div>
+                                                </div> */}
                                                 
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
@@ -142,4 +142,4 @@ function EmployeeAdd() {
   )
 }
 
-export default EmployeeAdd
+export default AddProject

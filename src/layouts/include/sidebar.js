@@ -118,31 +118,6 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-check-square-o" aria-hidden="true"></i> <span className="nav-label">Clients</span><span className="fa arrow"></span></a>
-                    <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Clients")}`}>
-                                            <Link to="/Clients" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>All Clients</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Clients")}`}>
-                                            <Link to="/Clients" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Add Clients</span>
-                                            </Link>
-                        </li>
-                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Edit Clients</span>
-                                            </Link>
-                        </li> */}
-                        
-                    </ul>
-                </li>
-
-                <li>
                     <a href=""><i class="fa fa-columns" aria-hidden="true"></i> <span className="nav-label">Leave Management</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
@@ -267,31 +242,6 @@ function Sidebar() {
                     </ul>
                 </li>
 
-
-                <li>
-                    <a href=""><i class="fa fa-clock-o" aria-hidden="true"></i> <span className="nav-label">Job</span><span className="fa arrow"></span></a>
-                    <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
-                                            <Link to="/Job" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Add Job</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
-                                            <Link to="/Job" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Requirements</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Job")}`}>
-                                            <Link to="/Job" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Applicant list</span>
-                                            </Link>
-                        </li>
-                    </ul>
-                </li>
-
     
 
                 <li>
@@ -315,44 +265,6 @@ function Sidebar() {
                                                 <span>Edit Consultancy</span>
                                             </Link>
                         </li> */}
-                    </ul>
-                </li>
-
-                <li>
-                    <a href=""><i class="fa fa-file-text-o" aria-hidden="true"></i> <span className="nav-label">Forms</span><span className="fa arrow"></span></a>
-                    <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Forms")}`}>
-                                            <Link to="/Forms" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Basic Form</span>
-                                            </Link>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href=""><i class="fa fa-building-o" aria-hidden="true"></i> <span className="nav-label">Authentication</span><span className="fa arrow"></span></a>
-                    <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Login</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Register</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
-                                            <Link to="/Employee" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
-                                                <span>Forgot Password</span>
-                                            </Link>
-                        </li>
-                        
-                        
                     </ul>
                 </li>
 
