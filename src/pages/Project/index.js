@@ -51,7 +51,7 @@ function Project() {
                                     <thead>
                                         <tr>
                                             <th>Project Name</th>
-                                            <th>Email</th>
+            
                                             <th>Client Name</th>
                                             <th>Deadline</th>
                                             <th>Team Member</th>
@@ -64,7 +64,7 @@ function Project() {
                                         <tr key={d.id}>
                                            
                                             <td>{d.project_name}</td>
-                                            <td>{d.email}</td>
+                                            {/* <td>{d.email}</td> */}
                                             <td>{d.client_name}</td>
                                             <td>{d.deadline}</td>
                                             <td>{d.team_member}</td>

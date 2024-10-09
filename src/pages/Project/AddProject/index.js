@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function AddProject() {
-    const [inputs, setInputs] = useState({id:'',project_name:'',email:'',client_name:'',deadline:'',team_member:'',status:'',});
+    const [inputs, setInputs] = useState({id:'',project_name:'',client_name:'',deadline:'',team_member:'',status:'',});
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -82,7 +82,7 @@ function AddProject() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Project Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Project Name"/>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="project_name" onChange={handleChange} placeholder="Type Project Name"/>
                                                     </div>
                                                 </div>
                                                 {/* <div className="col-12">
