@@ -98,12 +98,6 @@ function Sidebar() {
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
                                             <Link to="/Attendance" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
-                                                <span>Today's Attendance</span>
-                                            </Link>
-                        </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
-                                            <Link to="/Attendance" className="sidebar-link">
-                                                <i data-feather="home" width="20"></i>
                                                 <span>Employee Attendance</span>
                                             </Link>
                         </li>

@@ -7,6 +7,7 @@
       import Project from './pages/Project';
       import AddProject from './pages/Project/AddProject';
       import Attendance from './pages/Attendance';
+      import EmployeeAttendance from './pages/Attendance/EmployeeAttendance';
       import LeaveManagement from './pages/LeaveManagement';
       import Holidays from './pages/Holidays';
       import Accounts from './pages/Accounts';
@@ -64,9 +65,19 @@
                   <AddProject />
                 </Protected>
               } />
+                <Route path={"/attendance/add"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <EmployeeAttendance />
+                </Protected>
+              } />
                 <Route path={"/Attendance"} element={
                 <Protected isSignedIn={isSignedIn} >
                   <Attendance />
+                </Protected>
+              } />
+                <Route path={"/attendance/edit/:id"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <EmployeeAttendance />
                 </Protected>
               } />
                 <Route path={"/LeaveManagement"} element={

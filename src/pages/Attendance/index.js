@@ -10,12 +10,12 @@ function Attendance() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/attendance/index`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/employee/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/attendance/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -46,16 +46,16 @@ function Attendance() {
                         <div className="card-header">
                             <h4 className="card-title">Today's Attendance
                             </h4>
-                            <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <Link to={'/attendance/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
                                 <table className="table mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Employee Name</th>
                                             <th>Employee ID</th>
-                                            <th>Department</th>
+                                            <th>Department </th>
                                             <th>Check IN</th>
                                             <th>Shift</th>
                                             <th>Status</th>
@@ -65,15 +65,16 @@ function Attendance() {
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
-                                            <td className="text-bold-500">{d.name}</td>
-                                            <td>{d.email}</td>
-                                            <td>{d.phone_no}</td>
-                                            <td>{d.designation_id}</td>
-                                            <td>{d.department_id}</td>
-                                            <td>{d.education}</td>
+                                            
+                                            <td>{d.name}</td>
+                                            <td>{d.employee_id}</td>
+                                            <td>{d.department}</td>
+                                            <td>{d.check_in}</td>
+                                            <td>{d.shift}</td>
+                                            <td>{d.status}</td>
                                             {/* <td>{d.salary}</td> */}
                                             <td>
-                                                <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/attendance/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
