@@ -8,12 +8,8 @@
       import AddProject from './pages/Project/AddProject';
       import Attendance from './pages/Attendance';
       import EmployeeAttendance from './pages/Attendance/EmployeeAttendance';
-<<<<<<< HEAD
-    
-=======
       import LeaveManagement from './pages/LeaveManagement';
       import AllLeaveRequest from './pages/LeaveManagement/AllLeaveRequest';
->>>>>>> 1fd2fad167b753c3bba91b7acda28bae2c4f7ce0
       import Holidays from './pages/Holidays';
       import AllHolidays from './pages/Holidays/AllHolidays';
       import Accounts from './pages/Accounts';

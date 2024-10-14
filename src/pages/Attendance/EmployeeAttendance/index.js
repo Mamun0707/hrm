@@ -100,7 +100,7 @@ function TodayAttendance() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Check_in</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.check_in} name="check_in" onChange={handleChange} placeholder="check_in"/>
+                                                    <input type="time" id="email-id-vertical" className="form-control" defaultValue={inputs.check_in} name="check_in" onChange={handleChange} placeholder="check_in"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
