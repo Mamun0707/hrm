@@ -8,7 +8,7 @@
       import AddProject from './pages/Project/AddProject';
       import Attendance from './pages/Attendance';
       import EmployeeAttendance from './pages/Attendance/EmployeeAttendance';
-      import LeaveManagement from './pages/LeaveManagement';
+    
       import Holidays from './pages/Holidays';
       import Accounts from './pages/Accounts';
       import Departments from './pages/Departments';

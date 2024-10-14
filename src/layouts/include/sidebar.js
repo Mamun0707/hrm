@@ -120,7 +120,7 @@ function Sidebar() {
                                                 <span>All Leave Request</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
                                             <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Balance</span>
@@ -137,7 +137,7 @@ function Sidebar() {
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Types</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
