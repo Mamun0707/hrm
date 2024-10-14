@@ -10,12 +10,12 @@ function LeaveManagement() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/leavemanagement/index`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/employee/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/leavemanagement/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -25,7 +25,7 @@ function LeaveManagement() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Employee</h3>
+                        <h3>LeaveManagement</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
@@ -42,36 +42,34 @@ function LeaveManagement() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Designation</h4>
-                            <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">Leave Management</h4>
+                            <Link to={'/leavemanagement/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
+                                            <th>Employee_ID</th>
                                             <th>Name</th>
-                                            <th>Email</th>
-                                            <th>phone_no</th>
-                                            <th>designation_id</th>
-                                            <th>department_id</th>
-                                            <th>education</th>
-                                            <th>salary</th>
+                                            <th>Apply_Date</th>
+                                            <th>Leave_From</th>
+                                            <th>Leave_To</th>
+                                            <th>Leave_Type</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
+                                             <td>{d.employee_id}</td>
                                             <td className="text-bold-500">{d.name}</td>
-                                            <td>{d.email}</td>
-                                            <td>{d.phone_no}</td>
-                                            <td>{d.designation_id}</td>
-                                            <td>{d.department_id}</td>
-                                            <td>{d.education}</td>
-                                            <td>{d.salary}</td>
+                                            <td>{d.apply_date}</td>
+                                            <td>{d.leave_from}</td>
+                                            <td>{d.leave_to}</td>
+                                            <td>{d.leave_type}</td>
                                             <td>
-                                                <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/leavemanagement/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>

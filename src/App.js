@@ -8,8 +8,14 @@
       import AddProject from './pages/Project/AddProject';
       import Attendance from './pages/Attendance';
       import EmployeeAttendance from './pages/Attendance/EmployeeAttendance';
+<<<<<<< HEAD
     
+=======
+      import LeaveManagement from './pages/LeaveManagement';
+      import AllLeaveRequest from './pages/LeaveManagement/AllLeaveRequest';
+>>>>>>> 1fd2fad167b753c3bba91b7acda28bae2c4f7ce0
       import Holidays from './pages/Holidays';
+      import AllHolidays from './pages/Holidays/AllHolidays';
       import Accounts from './pages/Accounts';
       import Departments from './pages/Departments';
       import Payroll from './pages/Payroll';
@@ -80,6 +86,16 @@
                   <EmployeeAttendance />
                 </Protected>
               } />
+               <Route path={"/leaveManagement/add"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllLeaveRequest />
+                </Protected>
+              } />
+                <Route path={"/leaveManagement/edit/:id"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllLeaveRequest />
+                </Protected>
+              } />
                 <Route path={"/LeaveManagement"} element={
                 <Protected isSignedIn={isSignedIn} >
                   <LeaveManagement />
@@ -90,6 +106,16 @@
                     <Holidays />
                   </Protected>
                 } />
+                  <Route path={"/Holidays/add"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllHolidays />
+                </Protected>
+              } />
+               <Route path={"/Holidays/edit/:id"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllHolidays />
+                </Protected>
+              } />
               <Route path={"/Accounts"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Accounts />
