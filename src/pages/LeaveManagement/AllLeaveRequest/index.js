@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function AllLeaveRequest() {
-    const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',designation_id:'',department_id:'',education:'',salary:''});
+    const [inputs, setInputs] = useState({id:'',employee_id:'',name:'',apply_date:'',leave_from:'',leave_to:'',leave_type:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/leavemanagement/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function AllLeaveRequest() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/employee/edit/${inputs.id}`;
+                apiurl=`/leavemanagement/edit/${inputs.id}`;
             }else{
-                apiurl=`/employee/create`;
+                apiurl=`/leavemanagement/create`;
             }
             
             let response= await axios({
@@ -45,7 +45,7 @@ function AllLeaveRequest() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/employee')
+            navigate('/leavemanagement')
         } 
         catch(e){
             console.log(e);
@@ -57,7 +57,7 @@ function AllLeaveRequest() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Add New Employee</h3>
+                        <h3>New Leave Request</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
@@ -81,45 +81,46 @@ function AllLeaveRequest() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/>
+                                                    <label for="first-name-vertical">Employee_ID</label>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Email</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.designation_id} name="email" onChange={handleChange} placeholder="email"/>
+                                                    <label for="email-id-vertical">Name</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Phone Number</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phone_no} name="phone_no" onChange={handleChange} placeholder="Phone"/>
+                                                    <label for="email-id-vertical">Apply_Date</label>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.apply_date} name="apply_date" onChange={handleChange} placeholder="Type Date"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Designation</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="designation_id" onChange={handleChange} placeholder="Designation"/>
+                                                    <label for="email-id-vertical">Leave_From</label>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_from} name="leave_from" onChange={handleChange} placeholder="Type Date"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Department</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange} placeholder="Department"/>
+                                                    <label for="email-id-vertical">Leave_To</label>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_to} name="leave_to" onChange={handleChange} placeholder="Type Date"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Education</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.education} name="education" onChange={handleChange} placeholder="Education"/>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Salary</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.salary} name="salary" onChange={handleChange} placeholder="000.00"/>
+                                                    <label for="email-id-vertical">Leave_Type</label>
+                                                    <select className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange}>
+                                                        <option></option>
+                                                        <option>sick</option>
+                                                        <option>vacation</option>
+                                                        <option>personal</option>
+                                                        <option>maternity</option>
+                                                        <option>paternity</option>
+                                                    </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                     </div>
                                                 </div>
                                                 

@@ -76,12 +76,12 @@ function Sidebar() {
                                                 <span>All Project</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
                                             <Link to="/Project" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Project</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
                                             <Link to="/Project" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
@@ -120,7 +120,7 @@ function Sidebar() {
                                                 <span>All Leave Request</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
                                             <Link to="/LeaveManagement" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Balance</span>
@@ -137,7 +137,7 @@ function Sidebar() {
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Leave Types</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
@@ -151,7 +151,7 @@ function Sidebar() {
                                                 <span>All Holidays</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
                                             <Link to="/Holidays" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Holiday</span>
@@ -162,13 +162,13 @@ function Sidebar() {
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Holiday</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>
 
 
-                <li>
+                {/* <li>
                     <a href=""><i class="fa fa-suitcase" aria-hidden="true"></i> <span className="nav-label">Accounts</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Accounts")}`}>
@@ -191,7 +191,7 @@ function Sidebar() {
                         </li>
                         
                     </ul>
-                </li>
+                </li> */}
 
                 <li>
                     <a href=""><i class="fa fa-university" aria-hidden="true"></i> <span className="nav-label">Departments</span><span className="fa arrow"></span></a>
