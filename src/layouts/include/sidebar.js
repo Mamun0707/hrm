@@ -202,7 +202,7 @@ function Sidebar() {
                                                 <span>All Departments</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
                                             <Link to="/Departments" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Department</span>
@@ -213,7 +213,7 @@ function Sidebar() {
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Edit Departments</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         
                     </ul>
                 </li>

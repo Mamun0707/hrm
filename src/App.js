@@ -12,8 +12,8 @@
       import AllLeaveRequest from './pages/LeaveManagement/AllLeaveRequest';
       import Holidays from './pages/Holidays';
       import AllHolidays from './pages/Holidays/AllHolidays';
-      import Accounts from './pages/Accounts';
       import Departments from './pages/Departments';
+      import AllDepartments from './pages/Departments/AllDepartments';
       import Payroll from './pages/Payroll';
       import Consultancy from './pages/Consultancy';
       import Designation from './pages/Designation';
@@ -109,19 +109,25 @@
               } />
                <Route path={"/Holidays/edit/:id"} element={
                 <Protected isSignedIn={isSignedIn} >
-                  <AllHolidays />
+                  <AllDepartments />
                 </Protected>
               } />
-              <Route path={"/Accounts"} element={
-                  <Protected isSignedIn={isSignedIn} >
-                    <Accounts />
-                  </Protected>
-                } />
-              <Route path={"/Departments"} element={
+                <Route path={"/Departments"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Departments />
                   </Protected>
                 } />
+                  <Route path={"/Departments/add"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllDepartments />
+                </Protected>
+              } />
+               <Route path={"/Departments/edit/:id"} element={
+                <Protected isSignedIn={isSignedIn} >
+                  <AllHolidays />
+                </Protected>
+              } />
+            
               <Route path={"/Payroll"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Payroll />
