@@ -109,7 +109,7 @@
               } />
                <Route path={"/Holidays/edit/:id"} element={
                 <Protected isSignedIn={isSignedIn} >
-                  <AllDepartments />
+                  <AllHolidays />
                 </Protected>
               } />
                 <Route path={"/Departments"} element={
@@ -124,7 +124,7 @@
               } />
                <Route path={"/Departments/edit/:id"} element={
                 <Protected isSignedIn={isSignedIn} >
-                  <AllHolidays />
+                  <AllDepartments />
                 </Protected>
               } />
             

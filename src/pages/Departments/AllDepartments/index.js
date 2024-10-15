@@ -62,7 +62,7 @@ function AllDepartments() {
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                <li className="breadcrumb-item"><a href="index.html">Department</a></li>
                                 <li className="breadcrumb-item active" aria-current="page">Add New</li>
                             </ol>
                         </nav>
