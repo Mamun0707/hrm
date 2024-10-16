@@ -23,6 +23,7 @@
       import AllDepartments from './pages/Departments/AllDepartments';
 
       import Payroll from './pages/Payroll';
+      import PaySlip from './pages/Payroll/PaySlip';
 
       import Consultancy from './pages/Consultancy';
       import AllConsultancy from './pages/Consultancy/AllConsultancy';
@@ -140,9 +141,19 @@
                 </Protected>
               } />
             
-              <Route path={"/Payroll"} element={
+              <Route path={"/payroll"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Payroll />
+                  </Protected>
+                } />
+              <Route path={"/payroll/add"} element={
+                  <Protected isSignedIn={isSignedIn} >
+                    <PaySlip />
+                  </Protected>
+                } />
+              <Route path={"/payroll/edit/:id"} element={
+                  <Protected isSignedIn={isSignedIn} >
+                    <PaySlip />
                   </Protected>
                 } />
               <Route path={"/Consultancy"} element={

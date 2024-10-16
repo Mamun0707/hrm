@@ -221,14 +221,14 @@ function Sidebar() {
                 <li>
                     <a href=""><i class="fa fa-money" aria-hidden="true"></i> <span className="nav-label">Payroll</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Payroll")}`}>
-                                            <Link to="/Payroll" className="sidebar-link">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/payroll")}`}>
+                                            <Link to="/payroll" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Employee Salary</span>
                                             </Link>
                         </li>
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Payroll")}`}>
-                                            <Link to="/Payroll" className="sidebar-link">
+                                            <Link to="/payroll" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Pay slip</span>
                                             </Link>
