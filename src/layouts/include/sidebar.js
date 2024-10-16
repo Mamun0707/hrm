@@ -247,12 +247,12 @@ function Sidebar() {
                                                 <span>All Consultancy</span>
                                             </Link>
                         </li>
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Consultancy")}`}>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Consultancy")}`}>
                                             <Link to="/Consultancy" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
                                                 <span>Add Consultancy</span>
                                             </Link>
-                        </li>
+                        </li> */}
                         {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Employee")}`}>
                                             <Link to="/Employee" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>

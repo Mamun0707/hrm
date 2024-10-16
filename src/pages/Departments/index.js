@@ -55,6 +55,7 @@ function Departments() {
                                             <th>phone_no</th>
                                             <th>Email</th>
                                             <th>Total.Emp</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

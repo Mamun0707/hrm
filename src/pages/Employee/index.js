@@ -42,7 +42,7 @@ function Employee() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Designation</h4>
+                            <h4 className="card-title">All Employee</h4>
                             <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">

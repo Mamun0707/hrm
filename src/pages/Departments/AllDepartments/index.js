@@ -88,7 +88,7 @@ function AllDepartments() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Head of Dept</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.head_of_dept} name="head_of_dept" onChange={handleChange} placeholder="email"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.head_of_dept} name="head_of_dept" onChange={handleChange} placeholder="Type Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -100,7 +100,7 @@ function AllDepartments() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Email</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.email} name="email" onChange={handleChange} placeholder="type email"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.email} name="email" onChange={handleChange} placeholder="Type Email"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

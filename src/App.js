@@ -1,23 +1,35 @@
       import React, { useState, useEffect } from 'react';
       import Dashboard from './pages/Dashboard';
+
       import Login from './pages/Login';
       import Register from './pages/Register';
+
       import Employee from './pages/Employee';
       import EmployeeAdd from './pages/Employee/EmployeeAdd';
+
       import Project from './pages/Project';
       import AddProject from './pages/Project/AddProject';
+
       import Attendance from './pages/Attendance';
       import EmployeeAttendance from './pages/Attendance/EmployeeAttendance';
+
       import LeaveManagement from './pages/LeaveManagement';
       import AllLeaveRequest from './pages/LeaveManagement/AllLeaveRequest';
+
       import Holidays from './pages/Holidays';
       import AllHolidays from './pages/Holidays/AllHolidays';
+
       import Departments from './pages/Departments';
       import AllDepartments from './pages/Departments/AllDepartments';
+
       import Payroll from './pages/Payroll';
+
       import Consultancy from './pages/Consultancy';
+      import AllConsultancy from './pages/Consultancy/AllConsultancy';
+
       import Designation from './pages/Designation';
       import DesignationAdd from './pages/Designation/DesignationAdd';
+      
       import Protected from './components/protected';
       // import Fahim from './pages/Fahim';
       // import Ramjan from './pages/Ramjan';
@@ -122,7 +134,7 @@
                   <AllDepartments />
                 </Protected>
               } />
-               <Route path={"/Departments/edit/:id"} element={
+               <Route path={"/departments/edit/:id"} element={
                 <Protected isSignedIn={isSignedIn} >
                   <AllDepartments />
                 </Protected>
@@ -136,6 +148,16 @@
               <Route path={"/Consultancy"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <Consultancy />
+                  </Protected>
+                } />
+              <Route path={"/Consultancy/add"} element={
+                  <Protected isSignedIn={isSignedIn} >
+                    <AllConsultancy />
+                  </Protected>
+                } />
+              <Route path={"/Consultancy/edit/:id"} element={
+                  <Protected isSignedIn={isSignedIn} >
+                    <AllConsultancy />
                   </Protected>
                 } />
                 <Route path={"/designation"} element={

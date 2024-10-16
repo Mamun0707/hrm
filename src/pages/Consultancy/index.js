@@ -10,12 +10,12 @@ function Consultancy() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/consultancies/index`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/employee/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/consultancies/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -25,7 +25,7 @@ function Consultancy() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Employee</h3>
+                        <h3>Consultancy</h3>
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" className='breadcrumb-header'>
@@ -42,8 +42,8 @@ function Consultancy() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Designation</h4>
-                            <Link to={'/employee/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Consultancy</h4>
+                            <Link to={'/consultancies/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
@@ -51,12 +51,12 @@ function Consultancy() {
                                     <thead>
                                         <tr>
                                             <th>Name</th>
+                                            <th>Contact Person</th>
+                                            <th>Phone</th>
                                             <th>Email</th>
-                                            <th>phone_no</th>
-                                            <th>designation_id</th>
-                                            <th>department_id</th>
-                                            <th>education</th>
-                                            <th>salary</th>
+                                            <th>Address</th>
+                                            <th>Contact Date</th>
+                                            <th>Contact For</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -64,14 +64,14 @@ function Consultancy() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                             <td className="text-bold-500">{d.name}</td>
+                                            <td>{d.cont_per}</td>
+                                            <td>{d.phone}</td>
                                             <td>{d.email}</td>
-                                            <td>{d.phone_no}</td>
-                                            <td>{d.designation_id}</td>
-                                            <td>{d.department_id}</td>
-                                            <td>{d.education}</td>
-                                            <td>{d.salary}</td>
+                                            <td>{d.address}</td>
+                                            <td>{d.cont_date}</td>
+                                            <td>{d.cont_for}</td>
                                             <td>
-                                                <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/consultancies/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
