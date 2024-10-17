@@ -100,7 +100,7 @@ function AddProject() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Deadline</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="deadline" onChange={handleChange} placeholder="Time"/>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="deadline" onChange={handleChange} placeholder="Time"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

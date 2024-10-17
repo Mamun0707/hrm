@@ -100,13 +100,13 @@ function PaySlip() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Pay Period Start</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_start} name="pay_period_start" onChange={handleChange} placeholder=""/>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_start} name="pay_period_start" onChange={handleChange} placeholder=""/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Pay Period End</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_end} name="department_id" onChange={handleChange} placeholder=""/>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_end} name="department_id" onChange={handleChange} placeholder=""/>
                                                     </div>
                                                 </div>
                                                 
