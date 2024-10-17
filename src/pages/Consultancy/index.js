@@ -10,12 +10,12 @@ function Consultancy() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/consultancies/index`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/consultancy/index`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/consultancies/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/consultancy/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -43,7 +43,7 @@ function Consultancy() {
                     <div className="card">
                         <div className="card-header">
                             <h4 className="card-title">All Consultancy</h4>
-                            <Link to={'/consultancies/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <Link to={'/consultancy/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
@@ -71,7 +71,7 @@ function Consultancy() {
                                             <td>{d.cont_date}</td>
                                             <td>{d.cont_for}</td>
                                             <td>
-                                                <Link to={`/consultancies/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/consultancy/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>

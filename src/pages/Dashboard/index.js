@@ -327,7 +327,7 @@ function Dashboard() {
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <h5 className="card-title">Pay Roll</h5>
+                    <h5 className="card-title">Payroll</h5>
                   </div>
                 </div>
               </div>

@@ -161,12 +161,12 @@
                     <Consultancy />
                   </Protected>
                 } />
-              <Route path={"/Consultancy/add"} element={
+              <Route path={"/consultancy/add"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <AllConsultancy />
                   </Protected>
                 } />
-              <Route path={"/Consultancy/edit/:id"} element={
+              <Route path={"/consultancy/edit/:id"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <AllConsultancy />
                   </Protected>

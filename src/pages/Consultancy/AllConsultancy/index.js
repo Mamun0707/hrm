@@ -10,7 +10,7 @@ function AllConsultancy() {
     const {id} = useParams();
     
     function getDatas(){
-        axios.get(`${process.env.REACT_APP_API_URL}/consultancies/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/consultancy/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function AllConsultancy() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/consultancies/edit/${inputs.id}`;
+                apiurl=`/consultancy/edit/${inputs.id}`;
             }else{
-                apiurl=`/consultancies/create`;
+                apiurl=`/consultancy/create`;
             }
             
             let response= await axios({
@@ -45,7 +45,7 @@ function AllConsultancy() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/consultancies')
+            navigate('/consultancy')
         } 
         catch(e){
             console.log(e);
@@ -112,7 +112,7 @@ function AllConsultancy() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Contact Date</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.cont_date} name="cont_date" onChange={handleChange} placeholder=""/>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.cont_date} name="cont_date" onChange={handleChange} placeholder=""/>
                                                     </div>
                                                 </div>
                                                 
