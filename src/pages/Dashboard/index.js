@@ -192,8 +192,25 @@
 
 import React from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
+import { Link,useLocation } from 'react-router-dom'
 
 function Dashboard() {
+  const activeMenu=(e)=>{
+    document.querySelectorAll('.submenu').forEach(
+        function(e){
+            e.classList.remove('active');
+        }
+    )
+    const childElement = e.target.parentElement.querySelector('.submenu');
+    if(childElement && childElement.classList.contains('submenu')){
+        childElement.classList.add('active');
+    }
+}
+
+const location = useLocation();
+const isLinkActive = (path)=>{
+    return location.pathname == path ? 'active' : "";
+}
   return (
     <AdminLayout>
       <>
@@ -261,7 +278,10 @@ function Dashboard() {
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <h5 className="card-title">Employee</h5>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Employee</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
