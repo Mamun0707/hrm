@@ -239,12 +239,12 @@ function Sidebar() {
     
 
                 <li>
-                    <a href=""> <i class="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Consultancy</span><span className="fa arrow"></span></a>
+                    <a href=""> <i class="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Resignation</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/consultancy")}`}>
-                                            <Link to="/consultancy" className="sidebar-link">
+                                            <Link to="/resignation" className="sidebar-link">
                                                 <i data-feather="home" width="20"></i>
-                                                <span>All Consultancy</span>
+                                                <span>All Resignation</span>
                                             </Link>
                         </li>
                         {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Consultancy")}`}>

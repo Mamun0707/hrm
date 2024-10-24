@@ -25,8 +25,8 @@
       import Payroll from './pages/Payroll';
       import PaySlip from './pages/Payroll/PaySlip';
 
-      import Consultancy from './pages/Consultancy';
-      import AllConsultancy from './pages/Consultancy/AllConsultancy';
+      import Resignation from './pages/Resignation';
+      import AllResignation from './pages/Resignation/All Resignation';
 
       import Designation from './pages/Designation';
       import DesignationAdd from './pages/Designation/DesignationAdd';
@@ -156,19 +156,19 @@
                     <PaySlip />
                   </Protected>
                 } />
-              <Route path={"/Consultancy"} element={
+              <Route path={"/Resignation"} element={
                   <Protected isSignedIn={isSignedIn} >
-                    <Consultancy />
+                    <Resignation />
                   </Protected>
                 } />
-              <Route path={"/consultancy/add"} element={
+              <Route path={"/resignation/add"} element={
                   <Protected isSignedIn={isSignedIn} >
-                    <AllConsultancy />
+                    <AllResignation />
                   </Protected>
                 } />
-              <Route path={"/consultancy/edit/:id"} element={
+              <Route path={"/resignation/edit/:id"} element={
                   <Protected isSignedIn={isSignedIn} >
-                    <AllConsultancy />
+                    <AllResignation />
                   </Protected>
                 } />
                 <Route path={"/designation"} element={

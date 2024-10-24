@@ -357,7 +357,7 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-plus-fill"></i></h1>
-                    <h5 className="card-title">Consultancy</h5>
+                    <h5 className="card-title">resignation</h5>
                   </div>
                 </div>
               </div>
