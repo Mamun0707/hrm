@@ -64,7 +64,7 @@ function Resignation() {
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
-                                            <td>{d.employee_id}</td>
+                                            <td>{d.employee?.name}</td>
                                             <td>{d.title}</td>
                                             <td>{d.address_to}</td>
                                             <td>{d.details}</td>
