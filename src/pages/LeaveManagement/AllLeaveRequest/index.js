@@ -6,6 +6,9 @@ import {useParams} from "react-router-dom";
 
 function AllLeaveRequest() {
     const [inputs, setInputs] = useState({id:'',employee_id:'',name:'',apply_date:'',leave_from:'',leave_to:'',leave_type:''});
+    const [employee, setEmployee] = useState([]);
+    // for relation table
+
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -14,11 +17,19 @@ function AllLeaveRequest() {
             setInputs(response.data.data);
         });
     }
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+            setEmployee(response.data.data);
+        });
+        
+    }
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation();
+        //for relation table
     }, []);
 
     const handleChange = (event) => {
@@ -81,14 +92,49 @@ function AllLeaveRequest() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Employee_ID</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/>
+                                                    <label for="email-id-vertical">Employee ID</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Name</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Name"/>
+                                                    <label for="first-name-vertical">Name</label>
+                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/> */}
+                                                                <select
+                                                                    className="form-control"
+                                                                    id="employee_id"
+                                                                    name="employee_id"
+                                                                    value={inputs.employee_id}
+                                                                    onChange={handleChange}
+                                                                >
+                                                                    <option value="">Select Employee</option>
+                                                                    {employee.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
+                                                                </select>
+                                                    </div>
+                                                </div>
+                                                {/* this select to select is relation table d.name ekhane name er jaigai muloto colum er nam asbe */}
+                                               
+                                                
+
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="first-name-vertical">Email</label>
+                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/> */}
+                                                                <select
+                                                                    className="form-control"
+                                                                    id="employee_id"
+                                                                    name="employee_id"
+                                                                    value={inputs.employee_id}
+                                                                    onChange={handleChange}
+                                                                >
+                                                                    <option value="">Select Employee</option>
+                                                                    {employee.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.email}</option> 
+                                                                        //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
+                                                                    ))}
+                                                                </select>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

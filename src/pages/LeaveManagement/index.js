@@ -52,6 +52,7 @@ function LeaveManagement() {
                                         <tr>
                                             <th>Employee_ID</th>
                                             <th>Name</th>
+                                            <th>Email</th>
                                             <th>Apply_Date</th>
                                             <th>Leave_From</th>
                                             <th>Leave_To</th>
@@ -64,6 +65,8 @@ function LeaveManagement() {
                                         <tr key={d.id}>
                                              <td>{d.employee_id}</td>
                                             <td className="text-bold-500">{d.name}</td>
+                                            <td>{d.employee?.email}</td>  
+                                            {/* employee?. is connect for relation table */}
                                             <td>{d.apply_date}</td>
                                             <td>{d.leave_from}</td>
                                             <td>{d.leave_to}</td>
