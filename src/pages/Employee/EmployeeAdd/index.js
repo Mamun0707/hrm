@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function EmployeeAdd() {
-    const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',designation_id:'',department_id:'',education:'',salary:''});
+    const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',date_of_birth:'',age:'',hire_date:'',job_location:'',designation_id:'',department_id:'',education:'',address:'',salary:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -79,16 +79,18 @@ function EmployeeAdd() {
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
                                             <div className="row">
-                                                <div className="col-12">
+
+                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Name</label>
+                                                    <label for="first-name-vertical">Full Name</label>
                                                     <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/>
                                                     </div>
                                                 </div>
+
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Email</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.designation_id} name="email" onChange={handleChange} placeholder="email"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.designation_id} name="email" onChange={handleChange} placeholder="Email"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -97,25 +99,84 @@ function EmployeeAdd() {
                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phone_no} name="phone_no" onChange={handleChange} placeholder="Phone"/>
                                                     </div>
                                                 </div>
+                                                <div className="col-6">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Date of Birth</label>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.date_of_birth} name="date_of_birth" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-6">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Age</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.age} name="age" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-6">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Hire Date</label>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.hire_date} name="hire_date" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-6">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Job Location</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.job_location} name="job_location" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Designation</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="designation_id" onChange={handleChange} placeholder="Designation"/>
+                                                        <label for="email-id-vertical">Designation</label>
+                                                            <select className="form-control" defaultValue={inputs.designation_id} name="designation_id" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>Intern</option>
+                                                                <option>Junior Associate</option>
+                                                                <option>Associate</option>
+                                                                <option>Senior Associate</option>
+                                                                <option>Manager</option>
+                                                                <option>Senior Manager</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
+                                                    </div>
+                                                </div>
+
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                        <label for="email-id-vertical">Department</label>
+                                                            <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>Human Resources</option>
+                                                                <option>Finance</option>
+                                                                <option>Operations</option>
+                                                                <option>IT (Information Technology)</option>
+                                                                <option>Customer Service</option>
+                                                                <option>Quality Assurance</option>
+                                                                <option>Training and Development</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Department</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange} placeholder="Department"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Education</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.education} name="education" onChange={handleChange} placeholder="Education"/>
+                                                        <label for="email-id-vertical">Education</label>
+                                                            <select className="form-control" defaultValue={inputs.education} name="education" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>SSC</option>
+                                                                <option>HSC</option>
+                                                                <option>Degree</option>
+                                                                <option>Honour's</option>
+                                                                <option>Master's</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                     </div>
                                                 </div>
                                                 
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Adderss</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.address} name="address" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Salary</label>

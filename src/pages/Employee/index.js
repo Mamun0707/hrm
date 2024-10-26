@@ -53,10 +53,15 @@ function Employee() {
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>phone_no</th>
-                                            <th>designation_id</th>
-                                            <th>department_id</th>
-                                            <th>education</th>
-                                            <th>salary</th>
+                                            <th>Date of Birth</th>
+                                            <th>Age</th>
+                                            <th>Hire Date</th>
+                                            <th>Job Location</th>
+                                            <th>Designation ID</th>
+                                            <th>Department_id</th>
+                                            <th>Education</th>
+                                            <th>Adderss</th>
+                                            <th>Salary</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -66,9 +71,14 @@ function Employee() {
                                             <td className="text-bold-500">{d.name}</td>
                                             <td>{d.email}</td>
                                             <td>{d.phone_no}</td>
+                                            <td>{d.date_of_birth}</td>
+                                            <td>{d.age}</td>
+                                            <td>{d.hire_date}</td>
+                                            <td>{d.job_location}</td>
                                             <td>{d.designation_id}</td>
                                             <td>{d.department_id}</td>
                                             <td>{d.education}</td>
+                                            <td>{d.address}</td>
                                             <td>{d.salary}</td>
                                             <td>
                                                 <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
