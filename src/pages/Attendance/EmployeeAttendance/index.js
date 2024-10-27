@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 
 function TodayAttendance() {
     const [inputs, setInputs] = useState({id:'',name:'',employee_id:'',department:'',check_in:'',shift:'',status:''});
+    const [employee, setEmployee] = useState([]);
+    // for relation table
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -14,11 +16,20 @@ function TodayAttendance() {
             setInputs(response.data.data);
         });
     }
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+            setEmployee(response.data.data);
+        });
+        
+    }
+    // this function is relation table
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation();
+        //for relation table
     }, []);
 
     const handleChange = (event) => {
@@ -82,19 +93,40 @@ function TodayAttendance() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Employee Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/>
+                                                                 <select
+                                                                    className="form-control"
+                                                                    id="name"
+                                                                    name="name"
+                                                                    value={inputs.name}
+                                                                    onChange={handleChange}>
+                                                                    <option value="">Select Employee</option>
+                                                                    {employee.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
+                                                                </select>
+                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Employee ID</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/>
+                                                         <label for="first-name-vertical">Employee ID</label>
+                                                            <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Department</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department} name="department" onChange={handleChange} placeholder="department"/>
+                                                        <select className="form-control" defaultValue={inputs.department} name="department" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>Human Resources</option>
+                                                                <option>Finance</option>
+                                                                <option>Operations</option>
+                                                                <option>IT (Information Technology)</option>
+                                                                <option>Customer Service</option>
+                                                                <option>Quality Assurance</option>
+                                                                <option>Training and Development</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department} name="department" onChange={handleChange} placeholder="department"/> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -106,13 +138,24 @@ function TodayAttendance() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Shift</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.shift} name="shift" onChange={handleChange} placeholder="shift"/>
+                                                            <select className="form-control" defaultValue={inputs.shift} name="shift" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>Morning</option>
+                                                                <option>Day</option>
+                                                                <option>Night</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.shift} name="shift" onChange={handleChange} placeholder="shift"/> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Status</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange} placeholder="status"/>
+                                                            <select className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange}>
+                                                                <option></option>
+                                                                <option>Active</option>
+                                                                <option>Inactive</option>
+                                                            </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange} placeholder="status"/> */}
                                                     </div>
                                                 </div>
                                                 

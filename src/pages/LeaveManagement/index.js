@@ -64,7 +64,7 @@ function LeaveManagement() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                              <td>{d.employee_id}</td>
-                                            <td className="text-bold-500">{d.name}</td>
+                                            <td className="text-bold-500">{d.employee?.name}</td>
                                             <td>{d.employee?.email}</td>  
                                             {/* employee?. is connect for relation table */}
                                             <td>{d.apply_date}</td>

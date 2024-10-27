@@ -23,6 +23,7 @@ function AllLeaveRequest() {
         });
         
     }
+    // this function is relation table
 
     useEffect(() => {
         if(id){

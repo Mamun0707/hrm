@@ -66,7 +66,7 @@ function Attendance() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                             
-                                            <td>{d.name}</td>
+                                            <td>{d.employee?.name}</td>
                                             <td>{d.employee_id}</td>
                                             <td>{d.department}</td>
                                             <td>{d.check_in}</td>
