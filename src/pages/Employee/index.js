@@ -76,7 +76,7 @@ function Employee() {
                                             <td>{d.hire_date}</td>
                                             <td>{d.job_location}</td>
                                             <td>{d.designation_id}</td>
-                                            <td>{d.department_id}</td>
+                                            <td>{d.department?.dept_name}</td>
                                             <td>{d.education}</td>
                                             <td>{d.address}</td>
                                             <td>{d.salary}</td>

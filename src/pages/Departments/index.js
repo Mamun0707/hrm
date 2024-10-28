@@ -61,7 +61,7 @@ function Departments() {
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
-                                            <td className="text-bold-500">{d.employee?.dept_name}</td>
+                                            <td className="text-bold-500">{d.dept_name}</td>
                                             <td>{d.head_of_dept}</td>
                                             <td>{d.phone}</td>
                                             <td>{d.email}</td>

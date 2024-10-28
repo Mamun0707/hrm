@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 
 function AllDepartments() {
     const [inputs, setInputs] = useState({id:'',dept_name:'',head_of_dept:'',phone:'',email:'',total_emp:''});
-    const [employee, setEmployee] = useState([]);
+    // const [employee, setEmployee] = useState([]);
 
     const navigate=useNavigate();
     const {id} = useParams();
@@ -16,18 +16,18 @@ function AllDepartments() {
             setInputs(response.data.data);
         });
     }
-    function get_relation(){
-        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
-            setEmployee(response.data.data);
-        });
+    // function get_relation(){
+    //     axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+    //         setEmployee(response.data.data);
+    //     });
         
-    }
+    // }
 
     useEffect(() => {
         if(id){
             getDatas();
         }
-        get_relation();
+        // get_relation();
     }, []);
 
     const handleChange = (event) => {
@@ -91,7 +91,7 @@ function AllDepartments() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label for="first-name-vertical">Dept.Name</label>
-                                                                <select
+                                                                {/* <select
                                                                     className="form-control"
                                                                     id="dept_name"
                                                                     name="dept_name"
@@ -103,8 +103,8 @@ function AllDepartments() {
                                                                         <option key={d.id} value={d.id}>{d.department_id}</option> 
                                                                         //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
                                                                     ))}
-                                                                </select>
-                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.dept_name} name="dept_name" onChange={handleChange} placeholder="Full Name"/> */}
+                                                                </select> */}
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.dept_name} name="dept_name" onChange={handleChange} placeholder="Full Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

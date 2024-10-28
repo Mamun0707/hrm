@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 
 function EmployeeAdd() {
     const [inputs, setInputs] = useState({id:'',name:'',email:'',phone_no:'',date_of_birth:'',age:'',hire_date:'',job_location:'',designation_id:'',department_id:'',education:'',address:'',salary:''});
+    const [department, setDepartment] = useState([]);
+
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -14,11 +16,18 @@ function EmployeeAdd() {
             setInputs(response.data.data);
         });
     }
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/departments/index`).then(function(response) {
+            setDepartment(response.data.data);
+        });
+        
+    }
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation();
     }, []);
 
     const handleChange = (event) => {
@@ -143,7 +152,21 @@ function EmployeeAdd() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label for="email-id-vertical">Department</label>
-                                                            <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
+
+                                                        <select
+                                                                    className="form-control"
+                                                                    id="department_id"
+                                                                    name="department_id"
+                                                                    value={inputs.department_id}
+                                                                    onChange={handleChange}>
+                                                                
+                                                                    <option value="">Select Department</option>
+                                                                    {department.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.dept_name}</option> 
+                                                                        //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
+                                                                    ))}
+                                                                </select>
+                                                            {/* <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
                                                                 <option></option>
                                                                 <option>Human Resources</option>
                                                                 <option>Finance</option>
@@ -152,7 +175,7 @@ function EmployeeAdd() {
                                                                 <option>Customer Service</option>
                                                                 <option>Quality Assurance</option>
                                                                 <option>Training and Development</option>
-                                                            </select>
+                                                            </select> */}
                                                     {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                     </div>
                                                 </div>
