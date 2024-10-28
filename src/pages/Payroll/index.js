@@ -51,7 +51,12 @@ function Payroll() {
                                     <thead>
                                         <tr>
                                             <th>Employee ID</th>
-                                            <th>Gross Pay</th>
+                                            <th>Basic</th>
+                                            <th>Home Rent</th>
+                                            <th>Medical</th>
+                                            <th>Fine</th>
+                                            <th>Conveyance</th>
+                                            <th>Provident Fund</th>
                                             <th>Net Pay</th>
                                             <th>Pay Period Start</th>
                                             <th>Pay Period End</th>
@@ -63,7 +68,12 @@ function Payroll() {
                                         <tr key={d.id}>
                                             {/* <td className="text-bold-500">{d.name}</td> */}
                                             <td>{d.employee_id}</td>
-                                            <td>{d.gross_pay}</td>
+                                            <td>{d.basic}</td>
+                                            <td>{d.h_rent}</td>
+                                            <td>{d.medical}</td>
+                                            <td>{d.fine}</td>
+                                            <td>{d.conveyance}</td>
+                                            <td>{d.provident_fund}</td>
                                             <td>{d.net_pay}</td>
                                             <td>{d.pay_period_start}</td>
                                             <td>{d.pay_period_end}</td>
