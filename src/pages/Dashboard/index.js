@@ -289,9 +289,12 @@ const isLinkActive = (path)=>{
             <div className="col-lg-4 order-0">
               <div className="card">
                 <div className="d-flex align-items-end row">
-                  <div className="card-body">
-                    <h1><i className="menu-icon bi bi-person-plus-fill"></i></h1>
-                    <h5 className="card-title">Project</h5>
+                 <div className="card-body">
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Project</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
@@ -300,8 +303,11 @@ const isLinkActive = (path)=>{
               <div className="card">
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
-                    <h1><i className="menu-icon bi bi-capsule"></i></h1>
-                    <h5 className="card-title">Attendance</h5>
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Attendance</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
@@ -314,27 +320,34 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <h5 className="card-title">Leave Management</h5>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Leave Management</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
             </div>
             <div className="col-lg-4 order-0">
               <div className="card">
-                <div className="d-flex align-items-end row">
-                  <div className="card-body">
-                    <h1><i className="menu-icon bi bi-person-plus-fill"></i></h1>
-                    <h5 className="card-title">Holidays</h5>
+                <div className="card-body">
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Holidays</span>
+                                        </Link>
                   </div>
-                </div>
               </div>
             </div>
             <div className="col-lg-4 order-0">
               <div className="card">
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
-                    <h1><i className="menu-icon bi bi-capsule"></i></h1>
-                    <h5 className="card-title">Departments</h5>
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Departments</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
@@ -345,9 +358,25 @@ const isLinkActive = (path)=>{
             <div className="col-lg-4 order-0">
               <div className="card">
                 <div className="d-flex align-items-end row">
+                 <div className="card-body">
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Payroll</span>
+                                        </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 order-0">
+              <div className="card">
+                <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <h5 className="card-title">Payroll</h5>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>resignation</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
@@ -356,18 +385,11 @@ const isLinkActive = (path)=>{
               <div className="card">
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
-                    <h1><i className="menu-icon bi bi-person-plus-fill"></i></h1>
-                    <h5 className="card-title">resignation</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 order-0">
-              <div className="card">
-                <div className="d-flex align-items-end row">
-                  <div className="card-body">
-                    <h1><i className="menu-icon bi bi-capsule"></i></h1>
-                    <h5 className="card-title">Setting</h5>
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Employee" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                                            <span>Setting</span>
+                                        </Link>
                   </div>
                 </div>
               </div>
