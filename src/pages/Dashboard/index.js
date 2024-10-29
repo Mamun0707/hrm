@@ -291,8 +291,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                  <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Project" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-certificate"></i>
                                             <span>Project</span>
                                         </Link>
                   </div>
@@ -304,8 +304,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Attendance" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-book"></i>
                                             <span>Attendance</span>
                                         </Link>
                   </div>
@@ -320,8 +320,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/LeaveManagement" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-columns"></i>
                                             <span>Leave Management</span>
                                         </Link>
                   </div>
@@ -332,8 +332,8 @@ const isLinkActive = (path)=>{
               <div className="card">
                 <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Holidays" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-headphones"></i>
                                             <span>Holidays</span>
                                         </Link>
                   </div>
@@ -344,8 +344,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Departments" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-university"></i>
                                             <span>Departments</span>
                                         </Link>
                   </div>
@@ -360,8 +360,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                  <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Payroll" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-money"></i>
                                             <span>Payroll</span>
                                         </Link>
                   </div>
@@ -373,8 +373,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/Resignation" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-building"></i>
                                             <span>resignation</span>
                                         </Link>
                   </div>
@@ -386,8 +386,8 @@ const isLinkActive = (path)=>{
                 <div className="d-flex align-items-end row">
                   <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
-                    <Link to="/Employee" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-users"></i>
+                    <Link to="/" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-cogs"></i>
                                             <span>Setting</span>
                                         </Link>
                   </div>

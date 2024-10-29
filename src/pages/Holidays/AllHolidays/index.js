@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function AllHolidays() {
-    const [inputs, setInputs] = useState({id:'',title:'',type:'',start_date:'',end_date:'',details:''});
+    const [inputs, setInputs] = useState({id:'',employee_id:'',title:'',type:'',start_date:'',end_date:'',details:''});
     const navigate=useNavigate();
     const {id} = useParams();
+    const [employee, setEmployee] = useState([]);
     
     function getDatas(){
         axios.get(`${process.env.REACT_APP_API_URL}/holidays/${id}`).then(function(response) {
@@ -15,10 +16,18 @@ function AllHolidays() {
         });
     }
 
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+            setEmployee(response.data.data);
+        });
+        
+    }
+
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation();
     }, []);
 
     const handleChange = (event) => {
@@ -79,6 +88,24 @@ function AllHolidays() {
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
                                             <div className="row">
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                        <label for="first-name-vertical">Employee ID</label>
+                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder=""/> */}
+                                                                <select
+                                                                    className="form-control"
+                                                                    id="employee_id"
+                                                                    name="employee_id"
+                                                                    value={inputs.employee_id}
+                                                                    onChange={handleChange}>
+
+                                                                    <option value="">Select Employee</option>
+                                                                    {employee.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
+                                                                </select>
+                                                    </div>
+                                                </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Title</label>

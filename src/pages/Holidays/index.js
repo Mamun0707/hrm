@@ -50,6 +50,7 @@ function Holidays() {
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
+                                            <th>Employee ID</th>
                                             <th>Title</th>
                                             <th>Type</th>
                                             <th>Start Date</th>
@@ -61,6 +62,7 @@ function Holidays() {
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
+                                            <td>{d.employee?.name}</td>
                                             <td>{d.title}</td>
                                             <td>{d.type}</td>
                                             <td>{d.start_date}</td>
