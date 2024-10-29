@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function PaySlip() {
-    const [inputs, setInputs] = useState({id:'',employee_id:'',gross_pay:'',net_pay:'',pay_period_start:'',pay_period_end:''});
+    const [inputs, setInputs] = useState({id:'',employee_id:'',basic:'',h_rent:'',medical:'',fine:'',conveyance:'',provident_fund:'',net_pay:'',pay_period_start:'',pay_period_end:'',});
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -45,7 +45,7 @@ function PaySlip() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/payrolls')
+            navigate('/payroll')
         } 
         catch(e){
             console.log(e);
@@ -87,8 +87,38 @@ function PaySlip() {
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Gross Pay</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.gross_pay} name="gross_pay" onChange={handleChange} placeholder=""/>
+                                                    <label for="email-id-vertical">Basic</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.basic} name="basic" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Home Rent</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.h_rent} name="h_rent" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Medical</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.medical} name="medical" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Fine</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.fine} name="fine" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Conveyance</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.conveyance} name="conveyance" onChange={handleChange} placeholder=""/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Provident Fund</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.provident_fund} name="provident_fund" onChange={handleChange} placeholder=""/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -106,7 +136,7 @@ function PaySlip() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Pay Period End</label>
-                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_end} name="department_id" onChange={handleChange} placeholder=""/>
+                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_end} name="pay_period_end" onChange={handleChange} placeholder=""/>
                                                     </div>
                                                 </div>
                                                 
