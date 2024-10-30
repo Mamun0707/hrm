@@ -328,7 +328,7 @@ const isLinkActive = (path)=>{
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 order-0">
+            {/* <div className="col-lg-4 order-0">
               <div className="card">
                 <div className="card-body">
                     <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
@@ -337,6 +337,19 @@ const isLinkActive = (path)=>{
                                             <span>Holidays</span>
                                         </Link>
                   </div>
+              </div>
+            </div> */}
+            <div className="col-lg-4 order-0">
+              <div className="card">
+                <div className="d-flex align-items-end row">
+                  <div className="card-body">
+                    <h1><i className="menu-icon bi bi-person-workspace"></i></h1>
+                    <Link to="/Holidays" className="sidebar-link">
+                                            <i data-feather="home" width="20" class="fa fa-headphones"></i>
+                                            <span>Holidays</span>
+                                        </Link>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="col-lg-4 order-0">

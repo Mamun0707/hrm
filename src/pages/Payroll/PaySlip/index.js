@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 
 function PaySlip() {
     const [inputs, setInputs] = useState({id:'',employee_id:'',basic:'',h_rent:'',medical:'',fine:'',conveyance:'',provident_fund:'',net_pay:'',pay_period_start:'',pay_period_end:'',});
+    const [employee, setEmployee] = useState([]);
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -14,11 +15,18 @@ function PaySlip() {
             setInputs(response.data.data);
         });
     }
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
+            setEmployee(response.data.data);
+        });
+        
+    }
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation();
     }, []);
 
     const handleChange = (event) => {
@@ -82,7 +90,19 @@ function PaySlip() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Employee ID</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/>
+                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/> */}
+                                                                <select
+                                                                    className="form-control"
+                                                                    id="employee_id"
+                                                                    name="employee_id"
+                                                                    value={inputs.employee_id}
+                                                                    onChange={handleChange}>
+                                                                        
+                                                                    <option value="">Select Employee</option>
+                                                                    {employee.map((d) => (
+                                                                        <option key={d.id} value={d.id}>{d.name}</option>
+                                                                    ))}
+                                                                </select>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

@@ -67,7 +67,7 @@ function Payroll() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                             {/* <td className="text-bold-500">{d.name}</td> */}
-                                            <td>{d.employee_id}</td>
+                                            <td>{d.employee?.name}</td>
                                             <td>{d.basic}</td>
                                             <td>{d.h_rent}</td>
                                             <td>{d.medical}</td>

@@ -115,7 +115,16 @@ function AllHolidays() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Type</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.type} name="type" onChange={handleChange} placeholder="Holidays Type"/>
+                                                    <select className="form-control" defaultValue={inputs.type} name="type" onChange={handleChange}>
+                                                        <option></option>
+                                                        <option>New Year's Day</option>
+                                                        <option>Ekushey February</option>
+                                                        <option>May Day</option>
+                                                        <option>Eid al-Fitr</option>
+                                                        <option>Eid al-Adha</option>
+                                                        <option>Durga Puja</option>
+                                                    </select>
+                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.type} name="type" onChange={handleChange} placeholder="Holidays Type"/> */}
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
