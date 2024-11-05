@@ -215,7 +215,7 @@ function EmployeeAdd() {
                                                                          //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
                                                                    ))}
                                                                  </select>
-                                                             {/* <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
+                                                             <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
                                                                 <option></option>                                                                 <option>Human Resources</option>
                                                                  <option>Finance</option>
                                                                  <option>Operations</option>
@@ -223,7 +223,7 @@ function EmployeeAdd() {
                                                                  <option>Customer Service</option>
                                                                  <option>Quality Assurance</option>
                                                                  <option>Training and Development</option>
-                                                             </select>  */}
+                                                             </select> 
                                                      {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                      </div>
                                                  </div>
