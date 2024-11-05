@@ -32,8 +32,7 @@
       import DesignationAdd from './pages/Designation/DesignationAdd';
       
       import Protected from './components/protected';
-      // import Fahim from './pages/Fahim';
-      // import Ramjan from './pages/Ramjan';
+      
       import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 

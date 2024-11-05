@@ -52,7 +52,7 @@ function Employee() {
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>phone_no</th>
+                                            <th>Phone No</th>
                                             <th>Date of Birth</th>
                                             <th>Age</th>
                                             <th>Hire Date</th>
@@ -62,6 +62,9 @@ function Employee() {
                                             <th>Education</th>
                                             <th>Adderss</th>
                                             <th>Salary</th>
+                                            <th>Provident Fund</th>
+                                            <th>Medical</th>
+                                            <th>Home Rent</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -80,6 +83,9 @@ function Employee() {
                                             <td>{d.education}</td>
                                             <td>{d.address}</td>
                                             <td>{d.salary}</td>
+                                            <td>{d.provident_fund}</td>
+                                            <td>{d.medical}</td>
+                                            <td>{d.h_rent}</td>
                                             <td>
                                                 <Link to={`/employee/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
