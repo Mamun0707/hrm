@@ -5,55 +5,45 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function PaySlip() {
-    const [inputs, setInputs] = useState({id:'',employee_id:'',basic:'',h_rent:'',medical:'',fine:'',conveyance:'',provident_fund:'',net_pay:'',pay_period_start:'',pay_period_end:'',});
     const [employee, setEmployee] = useState([]);
     const navigate=useNavigate();
     const {id} = useParams();
-    
+
     function getDatas(){
-        axios.get(`${process.env.REACT_APP_API_URL}/payrolls/${id}`).then(function(response) {
-            setInputs(response.data.data);
+        let sm=document.getElementById('salary_month').value
+        let sy=document.getElementById('salary_year').value
+        axios.get(`${process.env.REACT_APP_API_URL}/payrolls/index?salary_month=${sm}&salary_year=${sy}`).then(function(response) {
+            if(response.data.data.length)
+                setEmployee(response.data.data);
+            else
+                get_relation()
         });
     }
+
     function get_relation(){
         axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
             setEmployee(response.data.data);
         });
-        
     }
 
     useEffect(() => {
-        if(id){
-            getDatas();
-        }
         get_relation();
     }, []);
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
-    }
-
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(inputs)
-        
+        const formdata=new FormData(e.target);
+
         try{
-            let apiurl='';
-            if(inputs.id!=''){
-                apiurl=`/payrolls/edit/${inputs.id}`;
-            }else{
-                apiurl=`/payrolls/create`;
-            }
+            let apiurl=`/payrolls/create`;
             
             let response= await axios({
                 method: 'post',
                 responsiveTYpe: 'json',
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
-                data: inputs
+                data: formdata
             });
-            navigate('/payroll')
+            //navigate('/payroll')
         } 
         catch(e){
             console.log(e);
@@ -87,79 +77,80 @@ function PaySlip() {
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
                                             <div className="row">
-                                                <div className="col-12">
+                                                <div className="col-4">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Employee ID</label>
-                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/> */}
-                                                                <select
-                                                                    className="form-control"
-                                                                    id="employee_id"
-                                                                    name="employee_id"
-                                                                    value={inputs.employee_id}
-                                                                    onChange={handleChange}>
+                                                        <label htmlFor="salary_month">Salary Month</label>
+                                                        <input type="text" id="salary_month" className="form-control" name="salary_month"/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-4">
+                                                    <div className="form-group">
+                                                        <label htmlFor="salary_year">Salary Year</label>
+                                                        <input type="text" id="salary_year" className="form-control" name="salary_year"/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-4">
+                                                    <div className="form-group mt-4">
+                                                        <button type="button" onClick={getDatas} className="btn btn-primary mr-1 mb-1">Submit</button>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <table className='table'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>#SL</td>
+                                                                <td>Employee</td>
+                                                                <td>Basic</td>
+                                                                <td>Home Rent</td>
+                                                                <td>Medical</td>
+                                                                <td>Fine</td>
+                                                                <td>Conveyance</td>
+                                                                <td>Provident Fund</td>
+                                                                <td>Net Pay</td>
+                                                            </tr>
+                                                            {employee && employee.map((d, key) =>
+                                                                <tr key={key}>
+                                                                    <td>{1+key}</td>
+                                                                    <td>
+                                                                        {d.employee
+                                                                            ? 
+                                                                                <>
+                                                                                    {d.employee?.name}
+                                                                                    <input type="hidden" defaultValue={d.employee_id} name={`employee_id[${key}]`} />
+                                                                                </>
+                                                                            : 
+                                                                                <>
+                                                                                    {d.name}
+                                                                                    <input type="hidden" defaultValue={d.id} name={`employee_id[${key}]`} />
+                                                                                </>
+                                                                        }
                                                                         
-                                                                    <option value="">Select Employee</option>
-                                                                    {employee.map((d) => (
-                                                                        <option key={d.id} value={d.id}>{d.name}</option>
-                                                                    ))}
-                                                                </select>
-                                                    </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.basic} name={`basic[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.h_rent ? parseFloat(d.medical) * parseFloat(d.basic) / 100 :0 } name={`h_rent[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.medical ? parseFloat(d.medical) * parseFloat(d.basic) / 100 :0 } name={`medical[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.fine} name={`fine[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.conveyance} name={`conveyance[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={d.provident_fund ? parseFloat(d.provident_fund) * parseFloat(d.basic) / 100 :0 } name={`provident_fund[${key}]`} />
+                                                                    </td>
+                                                                    <td>{d.net_pay}</td>
+                                                                </tr>
+                                                            )}
+                                                        </tbody>
+                                                    </table>
                                                 </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Basic</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.basic} name="basic" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Home Rent</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.h_rent} name="h_rent" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Medical</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.medical} name="medical" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Fine</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.fine} name="fine" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Conveyance</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.conveyance} name="conveyance" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Provident Fund</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.provident_fund} name="provident_fund" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Net Pay</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.net_pay} name="net_pay" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Pay Period Start</label>
-                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_start} name="pay_period_start" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Pay Period End</label>
-                                                    <input type="date" id="email-id-vertical" className="form-control" defaultValue={inputs.pay_period_end} name="pay_period_end" onChange={handleChange} placeholder=""/>
-                                                    </div>
-                                                </div>
-                                                
+                                              
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
                                                     <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>

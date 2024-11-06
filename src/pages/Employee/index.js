@@ -82,7 +82,7 @@ function Employee() {
                                             <td>{d.department?.dept_name}</td>
                                             <td>{d.education}</td>
                                             <td>{d.address}</td>
-                                            <td>{d.salary}</td>
+                                            <td>{d.basic}</td>
                                             <td>{d.provident_fund}</td>
                                             <td>{d.medical}</td>
                                             <td>{d.h_rent}</td>

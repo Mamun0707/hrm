@@ -58,8 +58,8 @@ function Payroll() {
                                             <th>Conveyance</th>
                                             <th>Provident Fund</th>
                                             <th>Net Pay</th>
-                                            <th>Pay Period Start</th>
-                                            <th>Pay Period End</th>
+                                            <th>Pay Month</th>
+                                            <th>Pay Year</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -75,8 +75,8 @@ function Payroll() {
                                             <td>{d.conveyance}</td>
                                             <td>{d.provident_fund}</td>
                                             <td>{d.net_pay}</td>
-                                            <td>{d.pay_period_start}</td>
-                                            <td>{d.pay_period_end}</td>
+                                            <td>{d.salary_month}</td>
+                                            <td>{d.salary_year}</td>
                                             <td>
                                                 <Link to={`/payroll/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>

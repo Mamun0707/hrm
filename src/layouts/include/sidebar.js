@@ -36,16 +36,16 @@ function Sidebar() {
                     </div>
                 </li>
                 <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/")}`}>
-                                        <Link to="/" className="sidebar-link">
-                                            <i data-feather="home" width="20" class="fa fa-th-large"></i>
-                                            <span>Dashboard</span>
-                                        </Link>
+                    <Link to="/" className="sidebar-link">
+                        <i data-feather="home" width="20" className="fa fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </Link>
                 </li>
 
 
 
                 <li>
-                    <a href=""> <i class="fa fa-users" aria-hidden="true"></i>
+                    <a href=""> <i className="fa fa-users" aria-hidden="true"></i>
                     <span className="nav-label">Employees</span>
                     <span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
@@ -68,7 +68,7 @@ function Sidebar() {
         
 
                 <li>
-                    <a href=""><i class="fa fa-certificate" aria-hidden="true"></i> <span className="nav-label">Project</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-certificate" aria-hidden="true"></i> <span className="nav-label">Project</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Project")}`}>
                                             <Link to="/Project" className="sidebar-link">
@@ -93,7 +93,7 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-book" aria-hidden="true"></i> <span className="nav-label">Attendance</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-book" aria-hidden="true"></i> <span className="nav-label">Attendance</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Attendance")}`}>
                                             <Link to="/Attendance" className="sidebar-link">
@@ -112,7 +112,7 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-columns" aria-hidden="true"></i> <span className="nav-label">Leave Management</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-columns" aria-hidden="true"></i> <span className="nav-label">Leave Management</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/LeaveManagement")}`}>
                                             <Link to="/LeaveManagement" className="sidebar-link">
@@ -143,7 +143,7 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-headphones" aria-hidden="true"></i> <span className="nav-label">Holidays</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-headphones" aria-hidden="true"></i> <span className="nav-label">Holidays</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Holidays")}`}>
                                             <Link to="/Holidays" className="sidebar-link">
@@ -169,7 +169,7 @@ function Sidebar() {
 
 
                 {/* <li>
-                    <a href=""><i class="fa fa-suitcase" aria-hidden="true"></i> <span className="nav-label">Accounts</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-suitcase" aria-hidden="true"></i> <span className="nav-label">Accounts</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Accounts")}`}>
                                             <Link to="/Accounts" className="sidebar-link">
@@ -194,7 +194,7 @@ function Sidebar() {
                 </li> */}
 
                 <li>
-                    <a href=""><i class="fa fa-university" aria-hidden="true"></i> <span className="nav-label">Departments</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-university" aria-hidden="true"></i> <span className="nav-label">Departments</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Departments")}`}>
                                             <Link to="/Departments" className="sidebar-link">
@@ -219,7 +219,7 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-money" aria-hidden="true"></i> <span className="nav-label">Payroll</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-money" aria-hidden="true"></i> <span className="nav-label">Payroll</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Payroll")}`}>
                                             <Link to="/Payroll" className="sidebar-link">
@@ -239,7 +239,7 @@ function Sidebar() {
     
 
                 <li>
-                    <a href=""> <i class="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Resignation</span><span className="fa arrow"></span></a>
+                    <a href=""> <i className="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Resignation</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/resignation")}`}>
                                             <Link to="/resignation" className="sidebar-link">
@@ -263,7 +263,7 @@ function Sidebar() {
                 </li>
 
                 <li>
-                    <a href=""><i class="fa fa-cogs" aria-hidden="true"></i> <span className="nav-label">Settings</span><span className="fa arrow"></span></a>
+                    <a href=""><i className="fa fa-cogs" aria-hidden="true"></i> <span className="nav-label">Settings</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/designation")}`}>
                                             <Link to="/designation" className="sidebar-link">

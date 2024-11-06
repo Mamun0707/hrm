@@ -18,13 +18,14 @@ function EmployeeAdd() {
         department_id: '',
         education: '',
         address: '',
-        salary: '',
+        basic: '',
         provident_fund: '',
         medical: '',
         h_rent: ''
     });
 
     const [department, setDepartment] = useState([]);
+    const [designation, setDesignation] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -37,6 +38,9 @@ function EmployeeAdd() {
     function get_relation() {
         axios.get(`${process.env.REACT_APP_API_URL}/departments/index`).then(function (response) {
             setDepartment(response.data.data);
+        });
+        axios.get(`${process.env.REACT_APP_API_URL}/designation/index`).then(function (response) {
+            setDesignation(response.data.data);
         });
     }
 
@@ -189,12 +193,9 @@ function EmployeeAdd() {
                                                             <label htmlFor="email-id-vertical">Designation</label>
                                                             <select className="form-control" value={inputs.designation_id} name="designation_id" onChange={handleChange}>
                                                                 <option value="">Select Designation</option>
-                                                                <option value="Intern">Intern</option>
-                                                                <option value="Junior Associate">Junior Associate</option>
-                                                                <option value="Associate">Associate</option>
-                                                                <option value="Senior Associate">Senior Associate</option>
-                                                                <option value="Manager">Manager</option>
-                                                                <option value="Senior Manager">Senior Manager</option>
+                                                                {designation.map((d) => (
+                                                                    <option key={d.id} value={d.id}>{d.desi_name}</option>
+                                                                ))}
                                                             </select>
                                                         </div>
                                                     </div>
@@ -203,28 +204,13 @@ function EmployeeAdd() {
                                                     <div className="form-group">
                                                         <label for="email-id-vertical">Department</label>
 
-                                                    <select
-                                                                    className="form-control"
-                                                                   id="department_id"                                                                    name="department_id"
-                                                                   value={inputs.department_id}
-                                                                    onChange={handleChange}>
-                                                                
-                                                                     <option value="">Select Department</option>
-                                                                    {department.map((d) => (
-                                                                        <option key={d.id} value={d.id}>{d.dept_name}</option> 
-                                                                         //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
-                                                                   ))}
-                                                                 </select>
-                                                             <select className="form-control" defaultValue={inputs.department_id} name="department_id" onChange={handleChange}>
-                                                                <option></option>                                                                 <option>Human Resources</option>
-                                                                 <option>Finance</option>
-                                                                 <option>Operations</option>
-                                                                 <option>IT (Information Technology)</option>
-                                                                 <option>Customer Service</option>
-                                                                 <option>Quality Assurance</option>
-                                                                 <option>Training and Development</option>
-                                                             </select> 
-                                                     {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
+                                                        <select className="form-control" id="department_id" name="department_id" defaultValue={inputs.department_id} onChange={handleChange}>
+                                                            <option value="">Select Department</option>
+                                                            {department.map((d) => (
+                                                                <option key={d.id} value={d.id}>{d.dept_name}</option> 
+                                                                    //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
+                                                            ))}
+                                                        </select>
                                                      </div>
                                                  </div>
                                                  <div className="col-12">
@@ -251,24 +237,24 @@ function EmployeeAdd() {
                                                  <div className="col-12">
                                                      <div className="form-group">
                                                      <label for="email-id-vertical">Salary</label>
-                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.salary} name="salary" onChange={handleChange} placeholder="000.00"/>
+                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.basic} name="basic" onChange={handleChange} placeholder="000.00"/>
                                                      </div>
                                                  </div>
                                                  <div className="col-12">
                                                      <div className="form-group">
-                                                     <label for="email-id-vertical">Provident Fund</label>
+                                                     <label for="email-id-vertical">Provident Fund (%)</label>
                                                      <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.provident_fund} name="provident_fund" onChange={handleChange} placeholder="000.00"/>
                                                      </div>
                                                  </div>
                                                  <div className="col-12">
                                                      <div className="form-group">
-                                                     <label for="email-id-vertical">Medical</label>
+                                                     <label for="email-id-vertical">Medical (%)</label>
                                                      <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.medical} name="medical" onChange={handleChange} placeholder="000.00"/>
                                                      </div>
                                                  </div>
                                                  <div className="col-12">
                                                      <div className="form-group">
-                                                     <label for="email-id-vertical">Home Rent</label>
+                                                     <label for="email-id-vertical">Home Rent (%)</label>
                                                      <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.h_rent} name="h_rent" onChange={handleChange} placeholder="000.00"/>
                                                      </div>
                                                  </div>

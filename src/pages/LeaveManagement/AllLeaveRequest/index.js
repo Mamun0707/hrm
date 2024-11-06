@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function AllLeaveRequest() {
-    const [inputs, setInputs] = useState({id:'',employee_id:'',name:'',apply_date:'',leave_from:'',leave_to:'',leave_type:''});
+    const [inputs, setInputs] = useState({id:'',employee_id:'',apply_date:'',leave_from:'',leave_to:'',leave_type:''});
     const [employee, setEmployee] = useState([]);
     // for relation table
 
@@ -91,53 +91,26 @@ function AllLeaveRequest() {
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
                                             <div className="row">
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Employee ID</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Type Name"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="first-name-vertical">Name</label>
-                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/> */}
-                                                                <select
-                                                                    className="form-control"
-                                                                    id="employee_id"
-                                                                    name="employee_id"
-                                                                    value={inputs.employee_id}
-                                                                    onChange={handleChange}
-                                                                >
-                                                                    <option value="">Select Employee</option>
-                                                                    {employee.map((d) => (
-                                                                        <option key={d.id} value={d.id}>{d.name}</option>
-                                                                    ))}
-                                                                </select>
-                                                    </div>
-                                                </div>
-                                                {/* this select to select is relation table d.name ekhane name er jaigai muloto colum er nam asbe */}
-                                               
                                                 
-
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Email</label>
+                                                    <label for="first-name-vertical">Employee</label>
                                                     {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="ID No"/> */}
-                                                                <select
-                                                                    className="form-control"
-                                                                    id="employee_id"
-                                                                    name="employee_id"
-                                                                    value={inputs.employee_id}
-                                                                    onChange={handleChange}
-                                                                >
-                                                                    <option value="">Select Employee</option>
-                                                                    {employee.map((d) => (
-                                                                        <option key={d.id} value={d.id}>{d.email}</option> 
-                                                                        //  d.email e muloto email er jaigai je colum niye kaz hbe oi colum er name bsbe
-                                                                    ))}
-                                                                </select>
+                                                        <select
+                                                            className="form-control"
+                                                            id="employee_id"
+                                                            name="employee_id"
+                                                            value={inputs.employee_id}
+                                                            onChange={handleChange}
+                                                        >
+                                                            <option value="">Select Employee</option>
+                                                            {employee.map((d) => (
+                                                                <option key={d.id} value={d.id}>{d.name}</option>
+                                                            ))}
+                                                        </select>
                                                     </div>
                                                 </div>
+                                               
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Apply_Date</label>
@@ -161,11 +134,11 @@ function AllLeaveRequest() {
                                                     <label for="email-id-vertical">Leave_Type</label>
                                                     <select className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange}>
                                                         <option></option>
-                                                        <option>sick</option>
-                                                        <option>vacation</option>
-                                                        <option>personal</option>
-                                                        <option>maternity</option>
-                                                        <option>paternity</option>
+                                                        <option value="sick">sick</option>
+                                                        <option value="vacation">vacation</option>
+                                                        <option value="personal">personal</option>
+                                                        <option value="maternity">maternity</option>
+                                                        <option value="paternity">paternity</option>
                                                     </select>
                                                     {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.leave_type} name="leave_type" onChange={handleChange} placeholder="Enter Reason"/> */}
                                                     </div>

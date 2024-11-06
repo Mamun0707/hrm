@@ -11,9 +11,12 @@ function TodayAttendance() {
     const navigate=useNavigate();
     const {id} = useParams();
     
-    function getDatas(){
-        axios.get(`${process.env.REACT_APP_API_URL}/attendance/${id}`).then(function(response) {
-            setInputs(response.data.data);
+    function getDatas(date){
+        axios.get(`${process.env.REACT_APP_API_URL}/attendance/index?attendance_date=${date.target.value}`).then(function(response) {
+            if(response.data.data.length)
+                setEmployee(response.data.data);
+            else
+                get_relation()
         });
     }
     function get_relation(){
@@ -25,9 +28,6 @@ function TodayAttendance() {
     // this function is relation table
 
     useEffect(() => {
-        if(id){
-            getDatas();
-        }
         get_relation();
         //for relation table
     }, []);
@@ -40,23 +40,21 @@ function TodayAttendance() {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(inputs)
-        
+        const formdata=new FormData(e.target);
+        // const datas={};
+        // for(let [name,value] of formdata.entries()){
+        //     datas[name]=value
+        // }
         try{
-            let apiurl='';
-            if(inputs.id!=''){
-                apiurl=`/attendance/edit/${inputs.id}`;
-            }else{
-                apiurl=`/attendance/create`;
-            }
+            let apiurl=`/attendance/create`;
             
             let response= await axios({
                 method: 'post',
                 responsiveTYpe: 'json',
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
-                data: inputs
+                data: formdata
             });
-            navigate('/attendance')
+            //navigate('/attendance')
         } 
         catch(e){
             console.log(e);
@@ -92,72 +90,59 @@ function TodayAttendance() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Employee Name</label>
-                                                                 <select
-                                                                    className="form-control"
-                                                                    id="name"
-                                                                    name="name"
-                                                                    value={inputs.name}
-                                                                    onChange={handleChange}>
-                                                                    <option value="">Select Employee</option>
-                                                                    {employee.map((d) => (
-                                                                        <option key={d.id} value={d.id}>{d.name}</option>
-                                                                    ))}
-                                                                </select>
-                                                    {/* <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Full Name"/> */}
+                                                        <label htmlFor="attendance_date">Date</label>
+                                                        <input type="date" id="attendance_date" className="form-control" defaultValue={inputs.attendance_date} name="attendance_date" onChange={getDatas}/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
-                                                    <div className="form-group">
-                                                         <label for="first-name-vertical">Employee ID</label>
-                                                            <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} placeholder="Type Id"/>
-                                                    </div>
+                                                    <table className='table'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>#SL</td>
+                                                                <td>Employee</td>
+                                                                <td>Check In</td>
+                                                                <td>Check Out</td>
+                                                                <td>Status</td>
+                                                            </tr>
+                                                            {employee && employee.map((d, key) =>
+                                                                <tr key={key}>
+                                                                    <td>{1+key}</td>
+                                                                    <td>
+                                                                        {d.employee
+                                                                            ? 
+                                                                                <>
+                                                                                    {d.employee?.name}
+                                                                                    <input type="hidden" defaultValue={d.employee_id} name={`employee_id[${key}]`} />
+                                                                                </>
+                                                                            : 
+                                                                                <>
+                                                                                    {d.name}
+                                                                                    <input type="hidden" defaultValue={d.id} name={`employee_id[${key}]`} />
+                                                                                </>
+                                                                        }
+                                                                        
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="time" className="form-control" defaultValue={d.check_in} name={`check_in[${key}]`} placeholder="check_in"/>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="time" className="form-control" defaultValue={d.check_out} name={`check_out[${key}]`} placeholder="check_in"/>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div className="form-group">
+                                                                            <select className="form-control" defaultValue={d.status} name={`status[${key}]`}>
+                                                                                <option value="0">Absent</option>
+                                                                                <option value="1">Present</option>
+                                                                                <option value="2">Late</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            )}
+                                                        </tbody>
+                                                    </table>
                                                 </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Department</label>
-                                                        <select className="form-control" defaultValue={inputs.department} name="department" onChange={handleChange}>
-                                                                <option></option>
-                                                                <option>Human Resources</option>
-                                                                <option>Finance</option>
-                                                                <option>Operations</option>
-                                                                <option>IT (Information Technology)</option>
-                                                                <option>Customer Service</option>
-                                                                <option>Quality Assurance</option>
-                                                                <option>Training and Development</option>
-                                                            </select>
-                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.department} name="department" onChange={handleChange} placeholder="department"/> */}
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Check_in</label>
-                                                    <input type="time" id="email-id-vertical" className="form-control" defaultValue={inputs.check_in} name="check_in" onChange={handleChange} placeholder="check_in"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Shift</label>
-                                                            <select className="form-control" defaultValue={inputs.shift} name="shift" onChange={handleChange}>
-                                                                <option></option>
-                                                                <option>Morning</option>
-                                                                <option>Day</option>
-                                                                <option>Night</option>
-                                                            </select>
-                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.shift} name="shift" onChange={handleChange} placeholder="shift"/> */}
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Status</label>
-                                                            <select className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange}>
-                                                                <option></option>
-                                                                <option>Active</option>
-                                                                <option>Inactive</option>
-                                                            </select>
-                                                    {/* <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange} placeholder="status"/> */}
-                                                    </div>
-                                                </div>
+                                               
                                                 
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
