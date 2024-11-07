@@ -10,12 +10,12 @@ function Designation() {
     }, []);
 
     function getDatas() {
-        axios.get(`http://localhost/hrm/designation.php`).then(function(response) {
-            setData(response.data);
+        axios.get(`${process.env.REACT_APP_API_URL}/designation/index`).then(function(response) {
+            setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.post(`http://localhost/hrm/designation_delete.php`,{id:id}).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/designation/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -59,8 +59,8 @@ function Designation() {
                             <tbody>
                             {data && data.map((d, key) =>
                                 <tr key={d.id}>
-                                    <td className="text-bold-500">{d.desig_name}</td>
-                                    <td>{d.desig_des}</td>
+                                    <td className="text-bold-500">{d.desi_name}</td>
+                                    <td>{d.description}</td>
                                     <td>{d.status? `active`:`Inactive`}</td>
                                     <td>
                                         <Link to={`/designation/edit/${d.id}`} className='btn btn-info' >Edit</Link>

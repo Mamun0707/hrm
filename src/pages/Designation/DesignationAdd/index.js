@@ -5,13 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function DesignationAdd() {
-    const [inputs, setInputs] = useState({id:'',desig_name:'',desig_des:'',status:''});
+    const [inputs, setInputs] = useState({id:'',desi_name:'',description:'',status:''});
     const navigate=useNavigate();
     const {id} = useParams();
-    function getDatas(){
-        axios.post(`http://localhost/hrm/designation_single.php`,{id:id}).then(function(response) {
-            setInputs(response.data);
-            console.log(response.data,'response frm api')
+    function getDatas() {
+        axios.get(`${process.env.REACT_APP_API_URL}/designation/${id}`).then(function (response) {
+            setInputs(response.data.data);
         });
     }
     useEffect(() => {
@@ -29,12 +28,19 @@ function DesignationAdd() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         console.log(inputs)
-        
+
+        let apiurl = '';
+        if (inputs.id !== '') {
+            apiurl = `/designation/edit/${inputs.id}`;
+        } else {
+            apiurl = `/designation/create`;
+        }
+
         try{
-            let response= await axios({
+            let response = await axios({
                 method: 'post',
-                responsiveTYpe: 'json',
-                url: `http://localhost/hrm/designation_add.php`,
+                responseType: 'json',
+                url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
             navigate('/designation')
@@ -74,13 +80,13 @@ function DesignationAdd() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Designation</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.desig_name} name="desig_name" onChange={handleChange} placeholder="Designation"/>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.desi_name} name="desi_name" onChange={handleChange} placeholder="Designation"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">Description</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.desig_des} name="desig_des" onChange={handleChange} placeholder="Description"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.description} name="description" onChange={handleChange} placeholder="Description"/>
                                                     </div>
                                                 </div>
                                                 
