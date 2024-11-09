@@ -57,17 +57,18 @@ function Designation() {
                                 </tr>
                             </thead>
                             <tbody>
-                            {data && data.map((d, key) =>
-                                <tr key={d.id}>
-                                    <td className="text-bold-500">{d.desi_name}</td>
-                                    <td>{d.description}</td>
-                                    <td>{d.status? `active`:`Inactive`}</td>
-                                    <td>
-                                        <Link to={`/designation/edit/${d.id}`} className='btn btn-info' >Edit</Link>
-                                        <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
-                                    </td>
-                                </tr>
-                            )}
+                                {data && data.map((d, key) =>
+                                    <tr key={d.id}>
+                                        <td className="text-bold-500">{d.desi_name}</td>
+                                        <td>{d.description}</td>
+                                        <td>{d.status}</td>
+                                        {/* <td>{d.status? `Active`:`Inactive`}</td> */}
+                                        <td>
+                                            <Link to={`/designation/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                            <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                                        </td>
+                                    </tr>
+                                )}
                             </tbody>
                         </table>
                     </div>

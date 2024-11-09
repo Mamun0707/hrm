@@ -89,6 +89,12 @@ function DesignationAdd() {
                                                     <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.description} name="description" onChange={handleChange} placeholder="Description"/>
                                                     </div>
                                                 </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">Status</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.status} name="status" onChange={handleChange} placeholder="Description"/>
+                                                    </div>
+                                                </div>
                                                 
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
