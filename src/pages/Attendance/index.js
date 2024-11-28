@@ -55,7 +55,6 @@ function Attendance() {
                                         <tr>
                                             <th>Employee Name</th>
                                             <th>Employee ID</th>
-                                            <th>Department </th>
                                             <th>Check IN</th>
                                             <th>Shift</th>
                                             <th>Status</th>
@@ -68,7 +67,6 @@ function Attendance() {
                                             
                                             <td>{d.employee?.name}</td>
                                             <td>{d.employee_id}</td>
-                                            <td>{d.department}</td>
                                             <td>{d.check_in}</td>
                                             <td>{d.shift}</td>
                                             <td>{d.status}</td>
