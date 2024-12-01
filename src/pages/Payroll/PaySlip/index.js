@@ -6,12 +6,17 @@ import {useParams} from "react-router-dom";
 
 function PaySlip() {
     const [employee, setEmployee] = useState([]);
+    const currentDate = new Date();
+    const [sm, setsm] = useState(currentDate.getMonth() + 1);
+    const [sy, setsy] = useState(currentDate.getFullYear());
     const navigate=useNavigate();
     const {id} = useParams();
 
     function getDatas(){
         let sm=document.getElementById('salary_month').value
         let sy=document.getElementById('salary_year').value
+        setsm(sm)
+        setsy(sy)
         axios.get(`${process.env.REACT_APP_API_URL}/payrolls/index?salary_month=${sm}&salary_year=${sy}`).then(function(response) {
             if(response.data.data.length)
                 setEmployee(response.data.data);
@@ -19,7 +24,15 @@ function PaySlip() {
                 get_relation()
         });
     }
-
+    function attandenceFine(i,basic){
+        let att=document.getElementById('att'+i)?.value;
+        let fine=0;
+        if(att <= 26){
+            let absent=(26 - att)
+            fine=(basic/26)*absent
+        }
+        return fine.toFixed(2);
+    }
     function get_relation(){
         axios.get(`${process.env.REACT_APP_API_URL}/employee/index`).then(function(response) {
             setEmployee(response.data.data);
@@ -28,8 +41,9 @@ function PaySlip() {
 
     useEffect(() => {
         get_relation();
-    }, []);
+    }, [sm,sy]);
 
+    
     const handleSubmit = async(e) => {
         e.preventDefault();
         const formdata=new FormData(e.target);
@@ -100,9 +114,11 @@ function PaySlip() {
                                                             <tr>
                                                                 <td>#SL</td>
                                                                 <td>Employee</td>
+                                                                <td>Attendance</td>
                                                                 <td>Basic</td>
                                                                 <td>Home Rent</td>
                                                                 <td>Medical</td>
+                                                                <td>Absent Fine</td>
                                                                 <td>Fine</td>
                                                                 <td>Conveyance</td>
                                                                 <td>Provident Fund</td>
@@ -127,6 +143,15 @@ function PaySlip() {
                                                                         
                                                                     </td>
                                                                     <td>
+                                                                        <input type="text" className="form-control" id={`att${d.id}`} name={`attendance[${key}]`} value=
+                                                                            {
+                                                                                d.attendance.filter(att => {
+                                                                                    const attDate = new Date(att.attendance_date);
+                                                                                    return attDate.getFullYear() == sy && attDate.getMonth() + 1 == sm;
+                                                                                }).length
+                                                                            }/>
+                                                                    </td>
+                                                                    <td>
                                                                         <input type="text" className="form-control" defaultValue={d.basic} name={`basic[${key}]`} />
                                                                     </td>
                                                                     <td>
@@ -134,6 +159,9 @@ function PaySlip() {
                                                                     </td>
                                                                     <td>
                                                                         <input type="text" className="form-control" defaultValue={d.medical ? parseFloat(d.medical) * parseFloat(d.basic) / 100 :0 } name={`medical[${key}]`} />
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" className="form-control" defaultValue={attandenceFine(d.id,d.basic)} name={`absent_fine[${key}]`} />
                                                                     </td>
                                                                     <td>
                                                                         <input type="text" className="form-control" defaultValue={d.fine} name={`fine[${key}]`} />

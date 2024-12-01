@@ -130,7 +130,7 @@ function TodayAttendance() {
                                                                     </td>
                                                                     <td>
                                                                         <div className="form-group">
-                                                                            <select className="form-control" defaultValue={d.status} name={`status[${key}]`}>
+                                                                            <select className="form-control" value={d.status} name={`status[${key}]`}>
                                                                                 <option value="0">Absent</option>
                                                                                 <option value="1">Present</option>
                                                                                 <option value="2">Late</option>
