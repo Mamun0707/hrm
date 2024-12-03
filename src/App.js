@@ -30,6 +30,9 @@
 
       import Designation from './pages/Designation';
       import DesignationAdd from './pages/Designation/DesignationAdd';
+
+      import Career from './pages/Career';
+      
       
       import Protected from './components/protected';
       
@@ -183,6 +186,11 @@
                 <Route path={"/designation/edit/:id"} element={
                   <Protected isSignedIn={isSignedIn} >
                     <DesignationAdd />
+                  </Protected>
+                } />
+                <Route path={"/career"} element={
+                  <Protected isSignedIn={isSignedIn} >
+                    <Career/>
                   </Protected>
                 } />
                 {/* <Route path="/fahim" element={<Fahim />} />

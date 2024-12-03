@@ -263,6 +263,18 @@ function Sidebar() {
                 </li>
 
                 <li>
+                    <a href=""> <i className="fa fa-building" aria-hidden="true"></i> <span className="nav-label">Career</span><span className="fa arrow"></span></a>
+                    <ul className="nav nav-second-level collapse">
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/career")}`}>
+                                            <Link to="/career" className="sidebar-link">
+                                                <i data-feather="home" width="20"></i>
+                                                <span>Career</span>
+                                            </Link>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href=""><i className="fa fa-cogs" aria-hidden="true"></i> <span className="nav-label">Settings</span><span className="fa arrow"></span></a>
                     <ul className="nav nav-second-level collapse">
                         <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/designation")}`}>
