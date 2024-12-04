@@ -73,7 +73,7 @@ function Career() {
                                             <td>{d.district}</td>
                                             <td>{d.prof_exp}</td>
                                             <td>{d.education}</td>
-                                            <td>{d.resume_pdf}</td>
+                                            <td><a href={`http://localhost:8000/resume_pdf/${d.resume_pdf}`} target='_blank'>Resume Download</a></td>
                                             
                                             <td>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
